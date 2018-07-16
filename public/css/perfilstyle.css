@@ -13,7 +13,7 @@
   margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #F5F5F5;
+  background-color: white;
 
  }
 
@@ -61,10 +61,11 @@ display: block;
 
 }
 
+
 @media (min-width: 768px) {
   .publicacion-contenedor {
-      width: 49%;
-      display: inline-block;
+    width: 49.7%;
+    display: inline-block;
   }
   .user.publicacion {
     width: 100%;
@@ -72,4 +73,97 @@ display: block;
     object-fit: cover;
     display: block;
   }
+
+  .datos.foto {
+    width: 8%;
+  }
+
+  .datos.seguidores {
+    width: 22%;
+  }
+  .biografia {
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 17px;
+    margin: 0 57px;
+  }
+
+  .perfil-perf {
+    height: 221px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .perfil-perf, .trabajos {
+    float:left;
+  }
+
+  .perfil-perf {
+    width: 24%;
+    height: 100vh;
+    margin-top: 0;
+  }
+
+  .trabajos {
+    width: 76%;
+}
+  .main-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 100px;
+  }
+
+  .publicacion-contenedor {
+    width: 24.572%;
+    height: 200px;
+}
+
+  .fotoperfil {
+    width: 97px;
+}
+
+.datos.foto {
+    width: 98.297px;
+    margin-top: 70px;
+}
+
+.datos.seguidores {
+    width: 163px;
+  }
+
+.biografia {
+    margin: 50px 20px;
+    line-height: 26px;
+}
+
+.user.publicacion {
+    height: 200px;
+}
+
+}
+
+@media (min-width: 1440px) {
+  .publicacion-contenedor {
+    width: 19.691%;
+}
+  .trabajos {
+    width: 80%;
+}
+.perfil-perf {
+    width: 20%;
+  }
+
+  .datos.foto {
+    width: 34%;
+  }
+
+  .datos.seguidores {
+    width: 56%;
+}
+.main-container {
+  width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 }
