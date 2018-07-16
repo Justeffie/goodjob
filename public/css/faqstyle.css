@@ -1,0 +1,222 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: "Lobster";
+  src: url("fonts/Lobster-Regular.woff");
+}
+
+/*NAV*/
+
+
+/* Section*/
+section {
+  overflow:hidden;
+  width: 100%;
+  background-color: rgb(251, 251, 237);
+}
+
+article {
+  overflow: hidden;
+  width: 90%;
+  margin: 100px auto;
+  background-color:rgb(250, 246, 235);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  padding: 15px 15px 15px 3px;
+  background-color: white;
+  font-weight: lighter;
+  border: 1px solid #80808036;
+}
+
+p {
+  text-align: justify;
+  clear: both;
+
+}
+
+.novisto {
+  width: 20px;
+  float: right;
+  margin-top: -39px;
+  margin-right: 11px;
+}
+#activar, #activar2, #activar3, #activar4, #activar5 {
+  z-index: -2;
+  position: relative;
+  top: 42px;
+}
+
+#activar ~ .desplegable  {
+  display: none;
+  overflow: hidden;
+}
+
+#activar:checked ~ .desplegable {
+  display: block;
+  margin-top: 20px;
+}
+
+#activar:checked ~ .inputlabel img.novisto {
+  transform: rotate(-90deg);
+}
+
+#activar2 ~ .desplegable  {
+  display: none;
+  overflow: hidden;
+}
+
+#activar2:checked ~ .desplegable {
+  display: block;
+  margin-top: 20px;
+}
+
+#activar2:checked ~ .inputlabel img.novisto {
+  transform: rotate(-90deg);
+}
+
+#activar3 ~ .desplegable  {
+  display: none;
+  overflow: hidden;
+}
+
+#activar3:checked ~ .desplegable {
+  display: block;
+  margin-top: 20px;
+}
+
+#activar3:checked ~ .inputlabel img.novisto {
+  transform: rotate(-90deg);
+}
+
+#activar4 ~ .desplegable  {
+  display: none;
+  overflow: hidden;
+}
+
+#activar4:checked ~ .desplegable {
+  display: block;
+  margin-top: 20px;
+}
+
+#activar4:checked ~ .inputlabel img.novisto {
+  transform: rotate(-90deg);
+}
+
+#activar5 ~ .desplegable  {
+  display: none;
+  overflow: hidden;
+
+}
+
+#activar5:checked ~ .desplegable {
+  display: block;
+  margin-top: 20px;
+}
+
+#activar5:checked ~ .inputlabel img.novisto {
+  transform: rotate(-90deg);
+}
+/*footer*/
+
+@media (min-width: 523px) {
+  section {
+   height: 190.5vh;
+  }
+}
+
+@media (min-width: 768px) {
+
+ ul.pie, .menu-contenedor {
+  width: 90%;
+}
+
+p {
+  font-size: 1rem;
+}
+
+ul.pie {
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+ul.pie li {
+  display: inline-block;
+  margin-left: 60px;
+}
+
+footer {
+  height: 207px;
+}
+
+
+@media (min-width: 1024px){
+  section {
+    height: 146.5vh;
+}
+
+  .hamburguesa, input[type=checkbox] {
+    display: none;
+  }
+  #act ~ ul li.menu {
+      display: inline-block;
+      overflow: hidden;
+      margin-top: 10px;
+      float: right;
+      border-top: none;
+      padding: 14px;
+    }
+  a.iniciar, ul li.menu {
+    font-size: 1rem;
+  }
+
+  ul.hambur {
+      margin-top: 0;
+  }
+
+  ul li.menu:hover {
+    border-bottom: 4px solid orange;
+  }
+.com {
+  overflow: hidden;
+  width: 55%;
+  margin: auto;
+
+}
+  .menu-contenedor {
+      width: 850px;
+  }
+  a.iniciar, ul li.menu {
+    font-size: 1rem;
+  }
+  ul li.menu {
+    display: inherit;
+    margin-top: 17px;
+  }
+
+  ul li.menu:hover {
+    border-bottom: 4px solid orange;
+  }
+
+ ul.pie, article, .menu-contenedor{
+    width: 850px;
+  }
+  li.faq {
+    padding-top: 20px;
+  }
+  ul.pie li {
+    margin-left: 91px;
+}

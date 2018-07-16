@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;;
+}
+/* ASIDE BIOGRAFIA*/
+.perfil-perf {
+  overflow: hidden;
+  width: 100%;
+  height: 250px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #F5F5F5;
+
+ }
+
+ .fotoperfil {
+   width: 60px;
+   border-radius: 50px;
+
+ }
+ .datos.foto {
+   width: 19%;
+   overflow: hidden;
+   margin: 10px auto 10px auto;
+ }
+
+ h4 {
+   text-align: center;
+ }
+
+.seguir {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.datos.seguidores
+{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.biografia {
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 10px;
+}
+
+/* USER PUBLICACION */
+
+.user.publicacion {
+width: 100%;
+display: block;
+}
+.publicacion-contenedor {
+  width: 100%;
+
+}
+
+@media (min-width: 768px) {
+  .publicacion-contenedor {
+      width: 49%;
+      display: inline-block;
+  }
+  .user.publicacion {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+  }
+}
