@@ -16,6 +16,11 @@
         {{$dato->foto_perfil}}
       @endforeach" alt="">
       <h4>{{ Auth::user()->name }}</h4>
+      <p class="user">@php
+        foreach ($user as $dato) {
+        echo '@' . $dato->usuario;
+        }
+      @endphp</p>
       </div>
       <div class="datos seguidores">
       <a class="seguir" href="#">0 Seguidores</a>

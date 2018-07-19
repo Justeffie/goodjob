@@ -16,7 +16,11 @@
   background-color: white;
 
  }
-
+.user {
+  font-size: 0.7rem;
+  text-align: center;
+  margin-top: 5px;
+}
  .fotoperfil {
    width: 60px;
    border-radius: 50px;
