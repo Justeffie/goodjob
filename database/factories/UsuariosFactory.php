@@ -14,12 +14,13 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Models\Usuario::class, function (Faker $faker) {
     return [
-        'nombre' => $faker->firstName,
+        'remember_token' => str_random(10),
+        'name' => $faker->firstName,
         'apellido' => $faker->lastName,
         'usuario' => $faker->userName,
-        'email' => $faker->email,
+        'email' => $faker->unique()->safeEmail,,
         'nacimiento' => $faker->date($format = 'y-m-d', $max = '2000-12-30'),
-        'pass' => $faker->password,
+        'password' => $faker->password,
         'foto_perfil' => $faker->imageUrl($width= 640, $height= 480)
     ];
 });
