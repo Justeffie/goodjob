@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" href="/css/iniciostyle.css">
-    <link rel="stylesheet" href="/css/perfilstyle.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>Inicio</title>
-  </head>
   <body>
     <header>
       <div class="head-contenedor">
       <div class="head">
-        <h1>Good Job</h1>
+        <a href="/home"><h1>Good Job</h1></a>
         <input id="act" type="checkbox" name="act" value="">
         <label for="act">
           <img class="perfil" src="@foreach ($user as $dato)
@@ -41,11 +32,11 @@
         <nav>
           <div class="nav-principal">
           <ul>
-            <li><a class="navegador" href="inicio.php"><img class="nav" src="/css/imagenes/inicio.png" alt="Inicio"></a></li>
-            <li><a class="navegador" href="inicio.php"><img class="nav" src="/css/imagenes/notificacion.png" alt="Notificaciones"></a></li>
-            <li><a class="navegador" href="inicio.php"><img class="nav" src="/css/imagenes/escribir.png" alt="Compartir"></a></li>
-            <li><a class="navegador" href="inicio.php"><img class="nav" src="/css/imagenes/mensajes.png" alt="Mensajes"></a></li>
-            <li><a class="navegador" href="inicio.php"><img class="nav" src="/css/imagenes/trabajo2.png" alt="Empleos"></a></li>
+            <li><a class="navegador" href="/home"><img class="nav" src="/css/imagenes/inicio.png" alt="Inicio"></a></li>
+            <li><a class="navegador" href="/postear"><img class="nav" src="/css/imagenes/notificacion.png" alt="Notificaciones"></a></li>
+            <li><a class="navegador" href="/postear"><img class="nav" src="/css/imagenes/escribir.png" alt="Compartir"></a></li>
+            <li><a class="navegador" href="/postear"><img class="nav" src="/css/imagenes/mensajes.png" alt="Mensajes"></a></li>
+            <li><a class="navegador" href="/postear"><img class="nav" src="/css/imagenes/trabajo2.png" alt="Empleos"></a></li>
           </ul>
           </div>
         </nav>

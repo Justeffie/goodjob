@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;;
+}
+
+.form-container {
+  background-color: white;
+  width: 90%;
+  margin-top: 105px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+h4 {
+  position: relative;
+  bottom: 10px;
+  left: 5px;
+  font-size: 0.9rem;
+}
+
+.fotoperfil {
+  width: 35px;
+}
+
+h4, .fotoperfil {
+  display: inline-block;
+}
+
+.info-usuario {
+  width: 100%;
+  clear: both;
+  display: block;
+  background-color: #F5F5F5;
+  padding: 10px;
+}
+
+.texto {
+  width: 95%;
+    height: 100px;
+    margin-left: 6px;
+    border-radius: 5px;
+    border: 2px solid orange;
+    margin-bottom: 27px;
+    margin-top: 10px;
+}
+
+.publicacion {
+  font-size: 0.85rem;
+    color: orange;
+    font-weight: bolder;
+    margin-bottom: 40px;
+    margin-left: 6px;
+}
+
+input[type=submit].postear {
+    width: 90%;
+    margin-left: 14px;
+    background-color: orange;
+    padding: 10px;
+    border-radius: 18px;
+    font-size: 0.9rem;
+    margin-bottom: 17px;
+  }
+
+@media (min-width:425px) {
+  .texto {
+    margin-left: 10px;
+  }
+
+  .publicacion {
+    margin-left: 9px;
+  }
+
+  input[type=submit].postear {
+    margin-left: 18px;
+  }
+}
+
+@media (min-width:768px) {
+  .form-container {
+    width: 64%;
+  }
+
+  .texto {
+    margin-left: 13px;
+  }
+
+  .publicacion {
+    margin-left: 13px;
+  }
+
+  input[type=submit].postear {
+    margin-left: 22px;
+  }
+}
+
+@media (min-width:1024px) {
+  .form-container {
+    width: 50%;
+}
+
+.texto {
+  height: 130px;
+}
+
+input[type=submit].postear {
+    margin-left: 29px;
+}
+}
+
+@media (min-width: 1440px) {
+  input[type=submit].postear {
+    margin-left: 31px;
+}
+
+.texto {
+    margin-left: 18px;
+}
+
+form-container {
+    width: 650px;
+    height: 335px;
+}
+}

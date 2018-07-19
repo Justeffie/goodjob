@@ -8,6 +8,8 @@ use App\Models\Usuario;
 
 class PerfilController extends Controller
 {
+
+
   public function index(Request $request)
   {
     $usuario = Auth::user()->name;

@@ -36,3 +36,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('logout', 'Auth\LoginController@logout');
 Route::get('/home', 'InicioController@user');
 Route::get('/perfil', 'PerfilController@index')->name('perfil');
+Route::get('/postear', 'PosteosController@index');
+Route::get('/posteoUsuario', 'PosteosController@postUsuario');

@@ -1,4 +1,13 @@
 @extends('layouts.encabezado')
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="/css/iniciostyle.css">
+    <link rel="stylesheet" href="/css/perfilstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Perfil de {{ Auth::user()->name }}</title>
+  </head>
 @section('contenido')
   <aside class="perfil-perf">
     <div class="datos">
@@ -19,22 +28,32 @@
   </aside>
   <section class="trabajos">
     <div class="publicacion-contenedor">
+      <a href="/posteoUsuario">
       <img class="user publicacion" src="/css/imagenes/ciudad.jpg" alt="">
+      </a>
     </div>
     <div class="publicacion-contenedor">
+      <a href="#">
       <img class="user publicacion" src="/css/imagenes/luces.jpg" alt="">
+      </a>
     </div>
     <div class="publicacion-contenedor">
+      <a href="#">
       <img class="user publicacion" src="/css/imagenes/naturaleza.jpg" alt="">
+      </a>
     </div>
     <div class="publicacion-contenedor">
       <img class="user publicacion" src="/css/imagenes/vintage.jpg" alt="">
     </div>
     <div class="publicacion-contenedor">
+      <a href="#">
       <img class="user publicacion" src="/css/imagenes/parque.jpg" alt="">
+      </a>
     </div>
     <div class="publicacion-contenedor">
+      <a href="#">
       <img class="user publicacion" src="/css/imagenes/chico.jpg" alt="">
+      </a>
     </div>
   </section>
 

@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;;
+}
+
+.post-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+  margin-top: 100px;
+}
+
+h4 {
+  position: relative;
+  bottom: 10px;
+  left: 5px;
+  font-size: 0.9rem;
+  z-index: 0;
+}
+
+.fotoperfil {
+  width: 35px;
+}
+
+h4, .fotoperfil {
+  display: inline-block;
+}
+
+.info-usuario {
+  width: 100%;
+  clear: both;
+  display: block;
+  background-color: #F5F5F5;
+  padding: 10px;
+}
+
+.user-publicacion {
+  width: 100%;
+}
+.user-post {
+  margin: 10px;
+}
+.user-date {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.user-post, .user-date {
+  font-size: 0.8rem;
+}
+
+.interaccion {
+  width: 100%;
+  background-color: #F5F5F5;
+  overflow: hidden;
+  padding: 7px;
+}
+
+.inter {
+  width: 20px;
+  margin-right: 37px;
+  margin-left: 40px;
+}
+
+@media (min-width:768px) {
+  .post-container {
+    width: 82%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width:1024px) {
+  .post-container {
+    width: 57%;
+  }
+}
+
+@media (min-width:1440px) {
+  .post-container {
+      width: 560px;
+    }
+}
