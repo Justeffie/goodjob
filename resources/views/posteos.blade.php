@@ -21,7 +21,7 @@
       </div>
       <form class="" action="index.html" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
-        <input class="texto" type="text" name="texto" value="">
+        <textarea class="texto" name="texto"></textarea>
         <input class="publicacion" type="file" name="imagen" value="" required>
         <input class="postear" type="submit" name="" value="Publicar">
       </form>

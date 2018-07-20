@@ -28,9 +28,12 @@
     <aside>
       <div class="right-container">
       <div class="publicar">
-        <form class="trabajo" action="index.html" method="post">
-          <input class="publica" type="text" name="" placeholder="Mostrá tu trabajo">
+        <form class="trabajo" action="" method="post" enctype="multipart/form-data">
+          {{csrf_field()}}
+          <textarea class="publica" name="texto" placeholder="Mostrá tu trabajo"></textarea>
+          <input class="publicacion" type="file" name="imagen" value="" required>
           <img class="compartir" src="css/imagenes/escribir.png" alt="Compartir">
+          <input class="postear" type="submit" name="" value="Publicar">
         </form>
       </div>
     </div>

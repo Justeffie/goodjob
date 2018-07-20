@@ -11,6 +11,6 @@ class PublicacionesSeeder extends Seeder
      */
     public function run()
     {
-        $usuarios = factory(App\Models\Publicacion::class, 20)->create();
+        $usuarios = factory(App\Models\Publicacion::class, 150)->create();
     }
 }

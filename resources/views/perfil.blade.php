@@ -33,31 +33,31 @@
   </aside>
   <section class="trabajos">
     <div class="publicacion-contenedor">
-      <a href="/posteoUsuario">
-      <img class="user publicacion" src="/css/imagenes/ciudad.jpg" alt="">
+      <a class="publicacion-a" href="/posteoUsuario">
+        <img class="user-publicacion" src="/css/imagenes/ciudad.jpg" alt="">
       </a>
     </div>
     <div class="publicacion-contenedor">
       <a href="#">
-      <img class="user publicacion" src="/css/imagenes/luces.jpg" alt="">
+      <img class="user-publicacion" src="/css/imagenes/luces.jpg" alt="">
       </a>
     </div>
     <div class="publicacion-contenedor">
       <a href="#">
-      <img class="user publicacion" src="/css/imagenes/naturaleza.jpg" alt="">
+      <img class="user-publicacion" src="/css/imagenes/naturaleza.jpg" alt="">
       </a>
     </div>
     <div class="publicacion-contenedor">
-      <img class="user publicacion" src="/css/imagenes/vintage.jpg" alt="">
+      <img class="user-publicacion" src="/css/imagenes/vintage.jpg" alt="">
     </div>
     <div class="publicacion-contenedor">
       <a href="#">
-      <img class="user publicacion" src="/css/imagenes/parque.jpg" alt="">
+      <img class="user-publicacion" src="/css/imagenes/parque.jpg" alt="">
       </a>
     </div>
     <div class="publicacion-contenedor">
       <a href="#">
-      <img class="user publicacion" src="/css/imagenes/chico.jpg" alt="">
+      <img class="user-publicacion" src="/css/imagenes/chico.jpg" alt="">
       </a>
     </div>
   </section>

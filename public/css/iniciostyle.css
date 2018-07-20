@@ -225,6 +225,23 @@ margin-bottom: 44px;
 margin-top: 30px;
 }
 
+.publicacion {
+  font-size: 0.54rem;
+    color: orange;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+
+input[type=submit].postear {
+      width: 37%;
+      margin-left: 10px;
+      background-color: orange;
+      padding: 5px;
+      border-radius: 18px;
+      font-size: 0.7rem;
+      margin-top: 12px;
+  }
+
 .barra-aside {
   clear: both;
   width: 100%;
@@ -271,6 +288,7 @@ margin-top: 30px;
   width: 20px;
   float: right;
   margin-right: 16px;
+  margin-top: 12px;
 }
 
 /* SECTION*/
@@ -423,8 +441,13 @@ img.nav {
   }
   .left-container {
     margin-left: 100px;
+    }
+  .right-container {
+    height: 170px;
   }
-
+  .publicar {
+        height: 170px;
+  }
   input[type=search] {
     margin: 0;
     width: 262.29px;
@@ -500,8 +523,16 @@ li.barra:hover {
   .search {
   left: 117px;
 }
-}
 
+.compartir {
+  margin-top: 28px;
+}
+}
+@media (min-width:1140px) {
+  .compartir {
+    margin-top: 29px;
+  }
+}
 @media (min-width: 1440px) {
   .nav-principal {
       width: 931px;
@@ -525,6 +556,10 @@ li.barra:hover {
     margin-right: auto;
     margin-left: auto;
 }
+
+.compartir {
+    margin-top: 30px;
+  }
 /*
 .left-container {
   width: 20%;

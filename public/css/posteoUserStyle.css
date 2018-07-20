@@ -14,11 +14,9 @@
 }
 
 h4 {
-  position: relative;
-  bottom: 10px;
-  left: 5px;
+  margin-left: 9px;
+  margin-top: 11px;
   font-size: 0.9rem;
-  z-index: 0;
 }
 
 .fotoperfil {
@@ -26,7 +24,7 @@ h4 {
 }
 
 h4, .fotoperfil {
-  display: inline-block;
+  float: left;
 }
 
 .info-usuario {
@@ -35,6 +33,7 @@ h4, .fotoperfil {
   display: block;
   background-color: #F5F5F5;
   padding: 10px;
+  overflow: hidden;
 }
 
 .user-publicacion {
