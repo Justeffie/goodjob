@@ -18,7 +18,7 @@ $factory->define(App\Models\Usuario::class, function (Faker $faker) {
         'name' => $faker->firstName,
         'apellido' => $faker->lastName,
         'usuario' => $faker->userName,
-        'email' => $faker->unique()->safeEmail,,
+        'email' => $faker->unique()->safeEmail,
         'nacimiento' => $faker->date($format = 'y-m-d', $max = '2000-12-30'),
         'password' => $faker->password,
         'foto_perfil' => $faker->imageUrl($width= 640, $height= 480)

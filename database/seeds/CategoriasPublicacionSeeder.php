@@ -12,11 +12,11 @@ class CategoriasPublicacionSeeder extends Seeder
     public function run()
     {
         DB::table('categorias_publicacion')->insert([
-          ['nombre' => 'Diseño Multimedial'],
-          ['nombre' => 'Diseño Gráfico'],
-          ['nombre' => 'Fotografía'],
-          ['nombre' => 'Arquitectura'],
-          ['nombre' => 'Ingeniería']
-        ])
+          ['id' => 1, 'nombre' => 'Diseño Multimedial'],
+          ['id' => 2, 'nombre' => 'Diseño Gráfico'],
+          ['id' => 3, 'nombre' => 'Fotografía'],
+          ['id' => 4, 'nombre' => 'Arquitectura'],
+          ['id' => 5, 'nombre' => 'Ingeniería']
+        ]);
     }
 }
