@@ -112,11 +112,13 @@ input#act {
     border-radius: 100%;
     margin-left: 14px;
     margin-top: 1px;
+    overflow: hidden;
 }
 
 .perfil-barralat {
   width: 100%;
   object-fit: cover;
+  height: 100%;
 }
 
 header {
@@ -139,6 +141,7 @@ header, nav {
 img.perfil {
   width: 100%;
   object-fit: cover;
+  height: 100%;
 }
 .perfil-img-contenedor {
   width: 34px;
@@ -227,6 +230,7 @@ img.usuario {
 width: 100%;
 float: left;
 object-fit: cover;
+height: 100%;
 }
 
 .publicacion {
@@ -271,6 +275,7 @@ input[type=submit].postear {
     border-radius: 50%;
     margin-right: 7px;
     margin-bottom: 38px;
+    overflow: hidden;
 }
 
 .publicar {
