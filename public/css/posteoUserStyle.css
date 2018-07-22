@@ -22,6 +22,7 @@ h4 {
 .fotoperfil {
   width: 100%;
   object-fit: cover;
+  height: 100%;
 }
 .infp-fotoperfil-contenedor {
   width: 35px;
@@ -41,6 +42,13 @@ h4, .fotoperfil {
   background-color: #F5F5F5;
   padding: 10px;
   overflow: hidden;
+}
+.info-fotoperfil-contenedor {
+  width: 35px;
+    height: 35px;
+    overflow: hidden;
+    border-radius: 100%;
+    float: left;
 }
 
 .user-publicacion {
