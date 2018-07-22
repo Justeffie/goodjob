@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PublicacionesSeeder extends Seeder
+class AmistadesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class PublicacionesSeeder extends Seeder
      */
     public function run()
     {
-        $usuarios = factory(App\Models\Publicacion::class, 50)->create();
+        $usuarios = factory(App\Models\Amistades::class, 20)->create();
     }
 }
