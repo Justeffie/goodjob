@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/agregar', 'ValidarController@formulario');
 Route::post('/agregar', 'ValidarController@validarFormulario');
-Route::get('/index', 'IndexController@index');
+Route::get('/index', 'IndexController@index')->middleware('guest');
 Route::get('/faq.php', 'IndexController@faq');
 //Route::get('/login.php', 'Auth\LoginController@showLoginForm');
 //Route::post('/login.php', 'Auth\LoginController@postlogin');

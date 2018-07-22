@@ -20,9 +20,16 @@ h4 {
 }
 
 .fotoperfil {
-  width: 35px;
+  width: 100%;
+  object-fit: cover;
 }
-
+.infp-fotoperfil-contenedor {
+  width: 35px;
+    height: 35px;
+    overflow: hidden;
+    border-radius: 100%;
+    float: left;
+}
 h4, .fotoperfil {
   float: left;
 }

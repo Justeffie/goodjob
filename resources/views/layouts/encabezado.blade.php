@@ -5,9 +5,11 @@
         <a href="/home"><h1>Good Job</h1></a>
         <input id="act" type="checkbox" name="act" value="">
         <label for="act">
+          <div class="perfil-img-contenedor">
           <img class="perfil" src="@foreach ($user as $dato)
             {{$dato->foto_perfil}}
           @endforeach" alt="">
+        </div>
         </label>
         <form class="search" action="" method="post">
           <input type="search" name="explorar" placeholder="Buscar"><img class="lupa" src="/css/imagenes/lupa2.png" alt="">

@@ -11,9 +11,11 @@
   @section('contenido')
     <div class="post-container">
       <div class="info-usuario">
+        <div class="info-fotoperfil-contenedor">
         <img class="fotoperfil" src="@foreach ($user as $dato)
           {{$dato->foto_perfil}}
         @endforeach" alt="">
+        </div>
         <h4>{{Auth::user()->name}}</h4>
       </div>
       <img class="user-publicacion" src="/css/imagenes/ciudad.jpg" alt="">

@@ -12,9 +12,11 @@
   <aside class="perfil-perf">
     <div class="datos">
       <div class="datos foto">
+        <div class="datos-fotoperfil-contenedor">
       <img class="fotoperfil" src="@foreach ($user as $dato)
         {{$dato->foto_perfil}}
       @endforeach" alt="">
+      </div>
       <h4>{{ Auth::user()->name }}</h4>
       <p class="user">@php
         foreach ($user as $dato) {
