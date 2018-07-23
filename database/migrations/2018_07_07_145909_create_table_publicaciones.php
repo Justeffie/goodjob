@@ -19,7 +19,7 @@ class CreateTablePublicaciones extends Migration
             $table->timestamps();
             $table->string('imagen');
             $table->string('descripcion', 255);
-            $table->integer('me_gustas');
+            $table->integer('me_gustas')->nullable()->default(0);
             $table->integer('id_categoria')->unsigned()->nullable();
             $table->integer('id_usuario')->unsigned()->nullable();
             $table->foreign('id_categoria')->references('id')->on('categorias_publicacion');

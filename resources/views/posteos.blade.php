@@ -21,12 +21,25 @@
 
 
       </div>
-      <form class="" action="index.html" method="post" enctype="multipart/form-data">
-        {{csrf_field()}}
-        <textarea class="texto" name="texto"></textarea>
-        <input class="publicacion" type="file" name="imagen" value="" required>
-        <input class="postear" type="submit" name="" value="Publicar">
-      </form>
 
-    </div>
+      <form class="" action="/postear" method="post" enctype="multipart/form-data">
+        {{csrf_field()}}
+        <textarea class="texto" name="descripcion"></textarea>
+        @if ($errors->has('descripcion'))
+            <span class="invalid-feedback" role="alert" style="color:red">
+                <strong>{{ $errors->first('descripcion') }}</strong>
+            </span>
+        @endif
+        <br>
+        <input class="publicacion" type="file" name="imagen" value="" required>
+        <br>
+        @if ($errors->has('imagen'))
+            <span class="invalid-feedback" role="alert" style="color:red">
+                <strong>{{ $errors->first('imagen') }}</strong>
+            </span>
+        @endif
+        <input class="postear" type="submit" value="Publicar">
+      </form>
+      </div>
+
   @endsection

@@ -11,8 +11,10 @@ use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 class Publicacion extends Model
 {
     protected $table = 'publicaciones';
+    protected $guarded = [];
 
-public function publicacion() {
-  return $this->hasMany(Publicacion::class, 'id_usuario', 'id');
-  }
+    public function publicacion() {
+      return $this->hasMany(Publicacion::class, 'id_usuario', 'id');
+    }
+
 }
