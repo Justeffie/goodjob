@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Publicacion;
+use App\Models\Usuario;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('inicio');
+      $publi = Publicacion::all();
+      $usuario = \Auth::user()->name;
+      $user = Usuario::where('name','=',$usuario)->get();
+        return view('inicio')->with('publi', $publi)
+          ->with('user', $user);
     }
 }

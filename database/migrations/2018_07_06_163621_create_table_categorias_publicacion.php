@@ -19,6 +19,13 @@ class CreateTableCategoriasPublicacion extends Migration
             $table->string('nombre');
 
         });
+        DB::table('categorias_publicacion')->insert([
+          ['id' => 1, 'nombre' => 'Diseño Multimedial'],
+          ['id' => 2, 'nombre' => 'Diseño Gráfico'],
+          ['id' => 3, 'nombre' => 'Fotografía'],
+          ['id' => 4, 'nombre' => 'Arquitectura'],
+          ['id' => 5, 'nombre' => 'Ingeniería']
+        ]);
     }
 
     /**

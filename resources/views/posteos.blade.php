@@ -24,6 +24,19 @@
 
       <form class="" action="/postear" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
+
+      <select name="id_categoria">
+        <option value="">Seleccione</option>
+        @foreach ($cats as $categoria)
+          <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+        @endforeach
+      </select>
+      @if ($errors->has('id_categoria'))
+          <span class="invalid-feedback" role="alert" style="color:red">
+              <strong>{{ $errors->first('id_categoria') }}</strong>
+          </span>
+      @endif
+      <br>
         <textarea class="texto" name="descripcion"></textarea>
         @if ($errors->has('descripcion'))
             <span class="invalid-feedback" role="alert" style="color:red">
@@ -38,6 +51,8 @@
                 <strong>{{ $errors->first('imagen') }}</strong>
             </span>
         @endif
+
+
         <input class="postear" type="submit" value="Publicar">
       </form>
       </div>

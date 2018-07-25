@@ -2,10 +2,15 @@
 @section('contenido')
     <section>
       <div class="container">
-          <?php for($i=0; $i <= 3; $i++) {
-          echo ' <article class="publi-inicio">
+
+
+<?php
+
+      foreach ($publi as $publicacion) {
+
+         echo '<article class="publi-inicio">
                     <div class="id-user-amigo">
-                      <div class="perfil-container"><img class="perfil-barralat" src="https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-hacker-3830b32ad9e0802c-512x512.png" alt=""></div><p id="user-amigo">Nombre de Amigo</p>
+                      <div class="perfil-container"><img class="perfil-barralat" src="https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-hacker-3830b32ad9e0802c-512x512.png" alt=""></div><p id="user-amigo">cambiar</p>
                     </div>
                     <div class="img-amigos">
                       <img class="" src="css/imagenes/elefantes.jpg" alt="">
@@ -21,7 +26,8 @@
                       </form>
                     </div>
                   </article>';
-          }; ?>
+                }
+?>
         </div>
 
     </section>

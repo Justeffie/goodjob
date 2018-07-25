@@ -34,7 +34,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('logout', 'Auth\LoginController@logout');
-Route::get('/home', 'InicioController@user');
+//Route::get('/home', 'InicioController@user');
 Route::get('/perfil', 'PerfilController@index')->name('perfil')->middleware('auth');
 
 Route::get('/postear', 'PosteosController@index')->middleware('auth');
