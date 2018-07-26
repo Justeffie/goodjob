@@ -45,4 +45,11 @@ class PosteosController extends Controller
 
       return redirect('/home');
     }
+
+    public function vistaPostUsuario(Request $request){
+     $usuario = Auth::user()->name;
+     $user = Usuario::where('name','=',$usuario)->get();
+     $view = view('posteoUsuario')->with('user', $user);
+     return $view;
+   }
 }
