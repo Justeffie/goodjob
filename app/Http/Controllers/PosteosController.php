@@ -25,13 +25,11 @@ class PosteosController extends Controller
 
       $this->validate($request, [
         'imagen' => 'required|image',
-        'descripcion' => 'required|string|max:255',
-        'id_categoria'=> 'required'
+        'descripcion' => 'string|max:255',
       ],
       [ 'imagen.required' => 'La imagen es requerida',
         'imagen.image' => 'Debe ser una imagen',
-        'descripcion.required' => 'La descripcion es requerida',
-        'id_categoria.required' => 'Categoria Requerida',
+        'descripcion.max:255' => 'Se excedió los caracteres máximos',
       ]);
 
       $ruta_imagen = $request->file('imagen')->store('fotosPosteos', 'public');
