@@ -3,35 +3,7 @@
     <section>
       <div class="container">
         @php
-        if ($post) {
-          foreach ($post as $dato) {
-                echo '<article class="publi-inicio">
-                           <div class="id-user-amigo">
-                             <div class="perfil-container"><img class="perfil-barralat" src=' . $dato->foto_perfil .' alt=""></div><p id="user-amigo">' . $dato->usuario. '</p>
-                           </div>
-                           <div class="img-amigos">
-                             <img class="" src=' . $dato->imagen . ' alt="">
-                            </div>';
-
-                            if ($dato->descripcion) {
-                              echo '<div class="descrip">
-                               <p class="descripcion-usuario">' .$dato->descripcion .'</p>
-                            </div>';
-                          }
-                           echo '<div class="publi-amigos">
-                             <a href="#"><img src="css/imagenes/megusta.png" alt=""></a>
-                             <a href="#"><img src="css/imagenes/comentario.png" alt=""></a>
-                             <a href="#"><img src="css/imagenes/compartir.png" alt=""></a>
-                           </div>
-                           <div class="comentarios">
-                             <form action="index.html" method="post">
-                               <input class="coment" type="text" name="" value="Escribí un comentario">
-                             </form>
-                           </div>
-                         </article>';
-
-              }
-            } else {
+         if ($post->all() === []) {
               echo '<div class="buscar-amigos">
                 <p>Todavía no tenés amigos. Comenzá a explorar...</p>
                 <form class="search" action="" method="post">';
@@ -39,7 +11,36 @@
                 echo  '<input type="search" name="explorar" placeholder="Buscar"><img class="lupa" src="/css/imagenes/lupa2.png" alt="">
                 </form>
               </div>';
-            }
+            } else {
+                foreach ($post as $dato) {
+                  echo '<article class="publi-inicio">
+                             <div class="id-user-amigo">
+                               <div class="perfil-container"><img class="perfil-barralat" src=' . $dato->foto_perfil .' alt=""></div><p id="user-amigo">' . $dato->usuario. '</p>
+                             </div>
+                             <div class="img-amigos">
+                               <img class="" src=' . $dato->imagen . ' alt="">
+                              </div>';
+
+                              if ($dato->descripcion) {
+                                echo '<div class="descrip">
+                                 <p class="descripcion-usuario">' .$dato->descripcion .'</p>
+                              </div>';
+                            }
+                             echo '<div class="publi-amigos">
+                               <a href="#"><img src="css/imagenes/megusta.png" alt=""></a>
+                               <a href="#"><img src="css/imagenes/comentario.png" alt=""></a>
+                               <a href="#"><img src="css/imagenes/compartir.png" alt=""></a>
+                             </div>
+                             <div class="comentarios">
+                               <form action="index.html" method="post">
+                                 <input class="coment" type="text" name="" value="Escribí un comentario">
+                               </form>
+                             </div>
+                           </article>';
+
+
+                }
+              }
         @endphp
         </div>
 
