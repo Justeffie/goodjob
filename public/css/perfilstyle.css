@@ -34,7 +34,6 @@
  }
  .datos.foto {
    width: 19%;
-   overflow: hidden;
    margin: 10px auto 10px auto;
  }
 
@@ -70,6 +69,21 @@ display: block;
   width: 100%;
   overflow: hidden;
 }
+
+.paginado {
+  overflow: hidden;
+  width: 44px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pagination, .page-item, .page-item.active, .page-item.disable {
+  display: inline-block;
+}
+section.trabajos {
+
+  margin-bottom: 100px;
+}
+
 @media (min-width: 425px) {
   .datos.seguidores {
     width: 36%;
@@ -131,7 +145,7 @@ display: block;
   }
 
   .publicacion-contenedor {
-    width: 24.572%;
+    width: 25%;
     height: 200px;
 }
 
@@ -168,7 +182,7 @@ display: block;
 
 @media (min-width: 1440px) {
   .publicacion-contenedor {
-    width: 19.691%;
+    width: 20%;
 }
   .trabajos {
     width: 80%;

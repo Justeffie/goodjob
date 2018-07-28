@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/posteoUserStyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <title>Postear</title>
+    <title>Trabajo de {{Auth::user()->name}}</title>
   </head>
   @section('contenido')
     <div class="post-container">
@@ -18,11 +18,15 @@
         </div>
         <h4>{{Auth::user()->name}}</h4>
       </div>
-      <img class="user-publicacion" src="/css/imagenes/ciudad.jpg" alt="">
+      <div class="imag-contenedor">
+          <img class="user-publicacion" src="{{$post->imagen}}" alt="">
 
-
-      <p class="user-post">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <p class="user-date">10 de abril 2018</p>
+      </div>
+      <div class="descrip-contenedor">
+      <p class="user-post">{{$post->descripcion}}
+        <br>
+      {{$post->created_at}}</p>
+      </div>
       <div class="interaccion">
         <a  href="#"><img class="inter" src="css/imagenes/megusta.png" alt=""></a>
         <a href="#"><img class="inter"  src="css/imagenes/comentario.png" alt=""></a>

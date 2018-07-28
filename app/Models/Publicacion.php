@@ -11,6 +11,7 @@ use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 class Publicacion extends Model
 {
     protected $table = 'publicaciones';
+    protected $fillable = array('imagen', 'descripcion', 'me_gustas', 'id_categoria', 'id_usuario');
     protected $guarded = [];
 
     public function categorias() {

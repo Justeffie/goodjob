@@ -40,4 +40,4 @@ Route::get('/perfil', 'PerfilController@index')->name('perfil')->middleware('aut
 Route::get('/postear', 'PosteosController@index')->middleware('auth');
 Route::post('/postear', 'PosteosController@postUsuario')->middleware('auth');
 
-Route::get('/posteoUsuario', 'PosteosController@vistaPostUsuario')->middleware('auth');
+Route::get('/posteoUsuario/{imagen}', 'PosteosController@vistaPostUsuario')->middleware('auth');

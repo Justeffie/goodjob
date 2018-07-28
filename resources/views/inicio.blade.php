@@ -2,32 +2,38 @@
 @section('contenido')
     <section>
       <div class="container">
-
-
-<?php
-
-      foreach ($publi as $publicacion) {
-
-         echo '<article class="publi-inicio">
-                    <div class="id-user-amigo">
-                      <div class="perfil-container"><img class="perfil-barralat" src="https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-hacker-3830b32ad9e0802c-512x512.png" alt=""></div><p id="user-amigo">cambiar</p>
+@php
+  foreach ($user as $dato) {
+    if ($dato->publicacion()) {
+      foreach ($dato->publicacion()->orderBy('created_at', 'DESC')->get() as $post) {
+        echo '<article class="publi-inicio">
+                   <div class="id-user-amigo">
+                     <div class="perfil-container"><img class="perfil-barralat" src=' . $dato->foto_perfil .' alt=""></div><p id="user-amigo">' . $dato->usuario. '</p>
+                   </div>
+                   <div class="img-amigos">
+                     <img class="" src=' . $post->imagen . ' alt="">
                     </div>
-                    <div class="img-amigos">
-                      <img class="" src="css/imagenes/elefantes.jpg" alt="">
-                      </div>
-                    <div class="publi-amigos">
-                      <a href="#"><img src="css/imagenes/megusta.png" alt=""></a>
-                      <a href="#"><img src="css/imagenes/comentario.png" alt=""></a>
-                      <a href="#"><img src="css/imagenes/compartir.png" alt=""></a>
+                    <div class="descrip">
+                       <p class="descripcion-usuario">' .$post->descripcion .'</p>
                     </div>
-                    <div class="comentarios">
-                      <form action="index.html" method="post">
-                        <input class="coment" type="text" name="" value="Escribí un comentario">
-                      </form>
-                    </div>
-                  </article>';
-                }
-?>
+                   <div class="publi-amigos">
+                     <a href="#"><img src="css/imagenes/megusta.png" alt=""></a>
+                     <a href="#"><img src="css/imagenes/comentario.png" alt=""></a>
+                     <a href="#"><img src="css/imagenes/compartir.png" alt=""></a>
+                   </div>
+                   <div class="comentarios">
+                     <form action="index.html" method="post">
+                       <input class="coment" type="text" name="" value="Escribí un comentario">
+                     </form>
+                   </div>
+                 </article>';
+
+      }
+    }
+  }
+@endphp
+
+
         </div>
 
     </section>

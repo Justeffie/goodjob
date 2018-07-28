@@ -25,7 +25,7 @@ class PosteosController extends Controller
 
       $this->validate($request, [
         'imagen' => 'required|image',
-        'descripcion' => 'string|max:255',
+        'descripcion' => 'max:255',
       ],
       [ 'imagen.required' => 'La imagen es requerida',
         'imagen.image' => 'Debe ser una imagen',
@@ -33,6 +33,7 @@ class PosteosController extends Controller
       ]);
 
       $ruta_imagen = $request->file('imagen')->store('fotosPosteos', 'public');
+      $ruta_imagen = 'storage/' . $ruta_imagen;
 
       Publicacion::create(
         [ 'imagen' => $ruta_imagen,
@@ -46,10 +47,19 @@ class PosteosController extends Controller
       return redirect('/home');
     }
 
-    public function vistaPostUsuario(Request $request){
+    public function vistaPostUsuario(Request $request, $imagen){
      $usuario = Auth::user()->name;
      $user = Usuario::where('name','=',$usuario)->get();
-     $view = view('posteoUsuario')->with('user', $user);
+     $post = '';
+      foreach ($user as $dato) {
+        if ($dato->publicacion()) {
+          $imag = "storage/fotosPosteos/" . $imagen;
+          foreach ($dato->publicacion()->where('imagen', '=', $imag)->get() as $imagen){
+            $post = $imagen;
+          }
+        }
+      }
+     $view = view('posteoUsuario')->with('user', $user)->with('post', $post);
      return $view;
    }
 }

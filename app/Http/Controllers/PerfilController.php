@@ -14,7 +14,13 @@ class PerfilController extends Controller
   {
     $usuario = Auth::user()->name;
     $user = Usuario::where('name','=',$usuario)->get();
-    $view = view('perfil')->with('user', $user);
+    $post = '';
+    foreach ($user as $dato) {
+      if ($dato->publicacion()) {
+        $post = $dato->publicacion()->orderBy('created_at', 'DESC')->paginate(12);
+      }
+    }
+    $view = view('perfil')->with('user', $user)->with('post', $post);
     return $view;
   }
 }
