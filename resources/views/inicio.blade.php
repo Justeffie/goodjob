@@ -12,11 +12,14 @@
                    </div>
                    <div class="img-amigos">
                      <img class="" src=' . $post->imagen . ' alt="">
-                    </div>
-                    <div class="descrip">
+                    </div>';
+
+                    if ($post->descripcion) {
+                      echo '<div class="descrip">
                        <p class="descripcion-usuario">' .$post->descripcion .'</p>
-                    </div>
-                   <div class="publi-amigos">
+                    </div>';
+                  }
+                   echo '<div class="publi-amigos">
                      <a href="#"><img src="css/imagenes/megusta.png" alt=""></a>
                      <a href="#"><img src="css/imagenes/comentario.png" alt=""></a>
                      <a href="#"><img src="css/imagenes/compartir.png" alt=""></a>
