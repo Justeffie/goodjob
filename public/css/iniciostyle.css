@@ -247,7 +247,7 @@ input[type=submit].postear {
       padding: 5px;
       border-radius: 18px;
       font-size: 0.7rem;
-      margin-top: 12px;
+      margin-top: 20px;
   }
 
 .barra-aside {
@@ -331,6 +331,28 @@ width: 99%;
   overflow: hidden;
   background-color: #F5F5F5;
 }
+.buscar-amigos {
+  width: 80%;
+    padding: 30px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    overflow: hidden;
+    margin-top: 100px;
+    border: 2px solid orange;
+    border-radius: 30px;
+
+}
+
+.buscar-amigos p {
+  text-align: center;
+    margin-bottom: 20px;
+}
+
+.buscar-amigos input[type=search] {
+    width: 75%;
+}
 
 /* ARTICLES */
 .publi-amigos {
@@ -374,6 +396,9 @@ width: 99%;
   .publi-inicio {
     width: 70%;
   }
+  .buscar-amigos {
+    padding: 40px;
+  }
   .nav-principal {
     width: 90%;
     margin-left: auto;
@@ -407,6 +432,7 @@ width: 99%;
 .barra-contenedor {
   width: 35%;
 }
+
 .head-contenedor {
     height: 88px;
   }
@@ -417,7 +443,14 @@ width: 99%;
   margin-right: auto;
   padding: 0 87px;
 }
+.buscar-amigos input[type=search] {
+    width: 81%;
+    margin-left: 12px;
+}
 
+.buscar-amigos {
+    width: 46%;
+  }
 .nav-principal {
   width: 72%;
 }
@@ -443,7 +476,16 @@ img.nav {
 
 
 @media (min-width:1024px) {
-
+  .buscar-amigos form {
+    margin-left:0;
+  }
+  .buscar-amigos input[type=search] {
+      width: 159px;
+    }
+    .buscar-amigos {
+      width: 84%;
+      margin-top: 110px;
+  }
   .container {
     width: 33%;
     margin: 0 9px;
@@ -461,12 +503,14 @@ img.nav {
   .left-container {
     margin-left: 100px;
     }
-  .right-container {
-    height: 170px;
-  }
-  .publicar {
-        height: 170px;
-  }
+  .right-container, .publicar {
+    height: 210px;
+}
+.id-categoria {
+  font-size: 0.54rem;
+    margin-left: 10px;
+    margin-top: 10px;
+}
   input[type=search] {
     margin: 0;
     width: 262.29px;
@@ -513,11 +557,23 @@ li.barra:hover {
 }
 
 @media (min-width: 1040px) {
+  .buscar-amigos form {
+    position: inherit;
+  }
+  .buscar-amigos {
+    width: 65%;
+  }
+  .buscar-amigos input[type=search] {
+    width: 204px;
+}
   .head {
       width: 83%;
   }
 .nav-principal {
     width: 77%;
+}
+input[type=submit].postear {
+  display: block;
 }
 .container {
     width: 40%;

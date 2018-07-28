@@ -33,6 +33,7 @@ Route::post('/usuario/{id}', 'UsuarioController@actualizar');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/home', 'HomeController@postUsuario');
 Route::get('logout', 'Auth\LoginController@logout');
 //Route::get('/home', 'InicioController@user');
 Route::get('/perfil', 'PerfilController@index')->name('perfil')->middleware('auth');

@@ -21,6 +21,7 @@
   height: 60px;
   overflow: hidden;
   border-radius: 100%;
+  margin:auto;
  }
 .user {
   font-size: 0.7rem;
@@ -86,7 +87,7 @@ section.trabajos {
 
 @media (min-width: 425px) {
   .datos.seguidores {
-    width: 36%;
+    width: 139px;
   }
   .datos.foto {
     width: 15%;
