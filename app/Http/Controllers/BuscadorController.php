@@ -23,6 +23,7 @@ class BuscadorController extends Controller
         $usuarios = \DB::table('users')->where('name', 'LIKE', '%'.$usuarios.'%')
         ->where('apellido', 'LIKE', '%'.$usuarios.'%')
         ->orWhere('name', 'LIKE', '%'.$usuarios.'%')
+        ->orWhere('apellido', 'LIKE', '%'.$usuarios.'%')
         ->orWhere('email', 'LIKE', '%'.$usuarios.'%')->paginate(10);
 
       }
