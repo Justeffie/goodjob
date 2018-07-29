@@ -24,6 +24,7 @@ class BuscadorController extends Controller
         ->where('apellido', 'LIKE', '%'.$usuarios.'%')
         ->orWhere('name', 'LIKE', '%'.$usuarios.'%')
         ->orWhere('apellido', 'LIKE', '%'.$usuarios.'%')
+        ->orWhere('usuario', 'LIKE', '%'.$usuarios.'%')
         ->orWhere('email', 'LIKE', '%'.$usuarios.'%')->paginate(10);
 
       }

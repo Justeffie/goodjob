@@ -17,7 +17,7 @@
         {{$dato->foto_perfil}}
       @endforeach" alt="">
       </div>
-      <h4>{{ Auth::user()->name }}</h4>
+      <h4>{{ Auth::user()->name }} {{Auth::user()->apellido}}</h4>
       <p class="user">@php
         foreach ($user as $dato) {
         echo '@' . $dato->usuario;

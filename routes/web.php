@@ -42,5 +42,6 @@ Route::get('/postear', 'PosteosController@index')->middleware('auth');
 Route::post('/postear', 'PosteosController@postUsuario')->middleware('auth');
 
 Route::get('/posteoUsuario/{imagen}', 'PosteosController@vistaPostUsuario')->middleware('auth');
-Route::get('/buscador', 'BuscadorController@index');
+Route::post('/posteoUsuario/{imagen}', 'PosteosController@borrar');
+Route::get('/buscador', 'BuscadorController@index')->middleware('auth');;
 Route::post('/buscador', 'BuscadorController@buscador');

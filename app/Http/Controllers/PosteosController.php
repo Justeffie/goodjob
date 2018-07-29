@@ -54,12 +54,26 @@ class PosteosController extends Controller
       foreach ($user as $dato) {
         if ($dato->publicacion()) {
           $imag = "storage/fotosPosteos/" . $imagen;
-          foreach ($dato->publicacion()->where('imagen', '=', $imag)->get() as $imagen){
+          foreach ($dato->publicacion()->where('imagen', 'LIKE', $imag)->get() as $imagen){
             $post = $imagen;
           }
         }
       }
      $view = view('posteoUsuario')->with('user', $user)->with('post', $post);
      return $view;
+   }
+
+   public function borrar(Request $request) {
+     $img = $request->input('img');
+     $confirm = $request->input('borrar');
+     $usuario = Auth::user()->usuario;
+     $user = Usuario::where('usuario','=',$usuario)->get();
+     if (($img !=false) && ($confirm !=false)) {
+       foreach ($user as $dato) {
+         $dato->publicacion()->where('imagen', 'LIKE', $img)->delete();
+       }
+       return redirect('/perfil');
+     }
+
    }
 }
