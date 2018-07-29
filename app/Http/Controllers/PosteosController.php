@@ -11,8 +11,8 @@ class PosteosController extends Controller
 {
 
     public function index(Request $request){
-      $usuario = Auth::user()->name;
-      $user = Usuario::where('name','=',$usuario)->get();
+      $usuario = Auth::user()->usuario;
+      $user = Usuario::where('usuario','=',$usuario)->get();
 
       $cats = CategoriasPublicacion::all();
 
@@ -48,8 +48,8 @@ class PosteosController extends Controller
     }
 
     public function vistaPostUsuario(Request $request, $imagen){
-     $usuario = Auth::user()->name;
-     $user = Usuario::where('name','=',$usuario)->get();
+     $usuario = Auth::user()->usuario;
+     $user = Usuario::where('usuario','=',$usuario)->get();
      $post = '';
       foreach ($user as $dato) {
         if ($dato->publicacion()) {

@@ -30,12 +30,12 @@ class HomeController extends Controller
     {
       $publi = Publicacion::all();
       $cats = CategoriasPublicacion::all();
-      $usuario = \Auth::user()->name;
-      $user = Usuario::where('name','=',$usuario)->get();
+      $usuario = \Auth::user()->usuario;
+      $user = Usuario::where('usuario','=',$usuario)->get();
       foreach ($user as $dato) {
         $id = $dato->id;
       }
-      
+
       $post = \DB::table('users')
       ->join('amistades', 'users.id', 'amistades.id_amigo')
       ->leftJoin('publicaciones', 'amistades.id_amigo', 'publicaciones.id_usuario')

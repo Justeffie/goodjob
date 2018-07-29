@@ -11,7 +11,8 @@
           @endforeach" alt="">
         </div>
         </label>
-        <form class="search" action="" method="post">
+        <form class="search" action="/buscador" method="post">
+          {{csrf_field()}}
           <input type="search" name="explorar" placeholder="Buscar"><img class="lupa" src="/css/imagenes/lupa2.png" alt="">
         </form>
         <div class="barra-contenedor">

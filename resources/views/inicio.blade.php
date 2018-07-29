@@ -1,12 +1,12 @@
 @extends('layouts.aside')
 @section('contenido')
-    <section>
+    <section class="main-sec">
       <div class="container">
         @php
          if ($post->all() === []) {
               echo '<div class="buscar-amigos">
                 <p>Todavía no tenés amigos. Comenzá a explorar...</p>
-                <form class="search" action="" method="post">';
+                <form class="search" action="/buscador" method="post">';
                   echo csrf_field();
                 echo  '<input type="search" name="explorar" placeholder="Buscar"><img class="lupa" src="/css/imagenes/lupa2.png" alt="">
                 </form>

@@ -12,8 +12,8 @@ class PerfilController extends Controller
 
   public function index(Request $request)
   {
-    $usuario = Auth::user()->name;
-    $user = Usuario::where('name','=',$usuario)->get();
+    $usuario = Auth::user()->usuario;
+    $user = Usuario::where('usuario','=',$usuario)->get();
     $post = '';
     foreach ($user as $dato) {
       if ($dato->publicacion()) {

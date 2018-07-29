@@ -14,8 +14,8 @@ class InicioController extends Controller
 
     public function user(Request $request)
     {
-      $usuario = Auth::user()->name;
-      $user = Usuario::where('name','=',$usuario)->get();
+      $usuario = Auth::user()->usuario;
+      $user = Usuario::where('usuario','=',$usuario)->get();
       foreach ($user as $dato) {
         $id = $dato->id;
       }
