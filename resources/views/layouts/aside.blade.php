@@ -28,8 +28,16 @@
           <ul class="barralat">
             <li><div class="perfil-container"><img class="perfil-barralat" src="@foreach ($user as $dato)
               {{$dato->foto_perfil}}
-            @endforeach" alt=""></div><p id="user">{{ Auth::user()->name }}</p></li>
-            <li class="barra"><a href="/perfil"><img src="/css/imagenes/user.png" alt="">Perfil</a></li>
+            @endforeach" alt=""></div><p id="user">@foreach ($user as $dato)
+              {{$dato->name}}
+            @endforeach</p></li>
+            <li class="barra">
+              <a href="/@php
+                foreach ($user as $dato) {
+                  echo $dato->usuario;
+                }
+              @endphp">
+            <img src="/css/imagenes/user.png" alt="">Perfil</a></li>
             <li class="barra"><a href="configuracion"><img src="/css/imagenes/configuracion.png" alt="">Configuración</a></li>
             <li class="barra">
               <form class="" action="{{ route('logout') }}" method="post">
@@ -64,8 +72,14 @@
                 {{$dato->foto_perfil}}
               @endforeach" alt="">
             </div>
-              <p class="nombre-usuario">{{ Auth::user()->name }}</p>
-            <li class="barra"><a href="/perfil"><img src="css/imagenes/user.png" alt="">Perfil</a></li>
+              <p class="nombre-usuario">@foreach ($user as $dato)
+                {{$dato->name}}
+              @endforeach</p>
+            <li class="barra"><a href="/@php
+              foreach ($user as $dato) {
+                echo $dato->usuario;
+              }
+            @endphp"><img src="css/imagenes/user.png" alt="">Perfil</a></li>
             <li class="barra"><a href="#"><img src="css/imagenes/configuracion.png" alt="">Configuración</a></li>
             <li class="barra">
               <form class="" action="{{ route('logout') }}" method="post">

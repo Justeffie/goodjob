@@ -47,15 +47,15 @@ class PosteosController extends Controller
       return redirect('/home');
     }
 
-    public function vistaPostUsuario(Request $request, $imagen){
-     $usuario = Auth::user()->usuario;
-     $user = Usuario::where('usuario','=',$usuario)->get();
+    public function vistaPostUsuario(Request $request, $usuario, $imagen){
+     $user = Usuario::where('usuario','=',trim($usuario))->get();
      $post = '';
+     $imagen = trim($imagen);
       foreach ($user as $dato) {
         if ($dato->publicacion()) {
           $imag = "storage/fotosPosteos/" . $imagen;
-          foreach ($dato->publicacion()->where('imagen', 'LIKE', $imag)->get() as $imagen){
-            $post = $imagen;
+          foreach ($dato->publicacion()->where('imagen', 'LIKE', $imag)->get() as $im){
+            $post = $im;
           }
         }
       }
@@ -63,16 +63,16 @@ class PosteosController extends Controller
      return $view;
    }
 
-   public function borrar(Request $request) {
-     $img = $request->input('img');
-     $confirm = $request->input('borrar');
+   public function borrar(Request $request, $usuario, $imagen) {
+     $imagen = 'storage/fotosPosteos' . trim($imagen);
+     $borrar = $request->input('borrar');
      $usuario = Auth::user()->usuario;
      $user = Usuario::where('usuario','=',$usuario)->get();
-     if (($img !=false) && ($confirm !=false)) {
+     if ($borrar) {
        foreach ($user as $dato) {
-         $dato->publicacion()->where('imagen', 'LIKE', $img)->delete();
+         $dato->publicacion()->where('imagen', 'LIKE', $imagen)->delete();
        }
-       return redirect('/perfil');
+       return redirect('/' . $usuario);
      }
 
    }

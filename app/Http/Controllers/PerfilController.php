@@ -10,10 +10,9 @@ class PerfilController extends Controller
 {
 
 
-  public function index(Request $request)
+  public function index(Request $request, $usuario)
   {
-    $usuario = Auth::user()->usuario;
-    $user = Usuario::where('usuario','=',$usuario)->get();
+    $user = Usuario::where('usuario','=',trim($usuario))->get();
     $post = '';
     foreach ($user as $dato) {
       if ($dato->publicacion()) {

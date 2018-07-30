@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="/css/perfilstyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <title>Perfil de {{ Auth::user()->name }}</title>
+    <title>Perfil de @foreach ($user as $dato)
+      {{$dato->name}} {{$dato->apellido}}
+    @endforeach</title>
   </head>
 @section('contenido')
   <aside class="perfil-perf">
@@ -17,7 +19,9 @@
         {{$dato->foto_perfil}}
       @endforeach" alt="">
       </div>
-      <h4>{{ Auth::user()->name }} {{Auth::user()->apellido}}</h4>
+      <h4>@foreach ($user as $dato)
+        {{$dato->name}} {{$dato->apellido}}
+      @endforeach</h4>
       <p class="user">@php
         foreach ($user as $dato) {
         echo '@' . $dato->usuario;
@@ -36,11 +40,15 @@
   <section class="trabajos">
     @php
         foreach ($post as $publi) {
+          foreach ($user as $dato) {
           echo '<div class="publicacion-contenedor">
-            <a class="publicacion-a" href="/posteoUsuario/'. substr($publi->imagen, 21) .'">
-              <img class="user-publicacion" src="'. $publi->imagen .'" alt="">
-            </a>
-            </div>';
+            <a class="publicacion-a" href="/'.$dato->usuario.'/' . substr($publi->imagen, 21) .
+              '">
+                <img class="user-publicacion" src="'. $publi->imagen .'" alt="">
+              </a>
+              </div>';
+            }
+
         }
     @endphp
   </section>

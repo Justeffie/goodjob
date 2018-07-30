@@ -37,7 +37,11 @@
         <a  href="#"><img class="inter" src="/css/imagenes/compartir.png" alt=""></a>
       </div>
       <div class="borrar">
-        <form class="" action="/perfil" method="post">
+        <form class="" action="/@php
+          foreach ($user as $dato) {
+            echo $dato->usuario;
+          }
+        @endphp" method="post">
           {{ csrf_field() }}
 
           <div class="borrar-bor">

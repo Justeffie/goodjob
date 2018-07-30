@@ -36,12 +36,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/home', 'HomeController@postUsuario');
 Route::get('logout', 'Auth\LoginController@logout');
 //Route::get('/home', 'InicioController@user');
-Route::get('/perfil', 'PerfilController@index')->name('perfil')->middleware('auth');
 
 Route::get('/postear', 'PosteosController@index')->middleware('auth');
 Route::post('/postear', 'PosteosController@postUsuario')->middleware('auth');
+Route::get('/{usuario}', 'PerfilController@index')->name('perfil')->middleware('auth');
 
-Route::get('/posteoUsuario/{imagen}', 'PosteosController@vistaPostUsuario')->middleware('auth');
-Route::post('/posteoUsuario/{imagen}', 'PosteosController@borrar');
+
+
+Route::get('/{usuario}/{imagen}', 'PosteosController@vistaPostUsuario')->middleware('auth');
+Route::post('/{usuario}/{imagen}', 'PosteosController@borrar');
 Route::get('/buscador', 'BuscadorController@index')->middleware('auth');;
 Route::post('/buscador', 'BuscadorController@buscador');
