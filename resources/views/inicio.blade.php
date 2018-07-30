@@ -15,10 +15,10 @@
                 foreach ($post as $dato) {
                   echo '<article class="publi-inicio">
                              <div class="id-user-amigo">
-                               <div class="perfil-container"><img class="perfil-barralat" src=' . $dato->foto_perfil .' alt=""></div><p id="user-amigo">' . $dato->name . ' ' .$dato->apellido. '</p>
+                               <div class="perfil-container"><img class="perfil-barralat" src="' . $dato->foto_perfil .'" alt=""></div><p id="user-amigo">' . $dato->name . ' ' .$dato->apellido. '</p>
                              </div>
                              <div class="img-amigos">
-                               <img class="" src=' . $dato->imagen . ' alt="">
+                               <img class="" src="' . $dato->imagen . '" alt="">
                               </div>';
 
                               if ($dato->descripcion) {

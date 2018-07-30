@@ -38,11 +38,13 @@ class HomeController extends Controller
 
       $post = \DB::table('users')
       ->join('amistades', 'users.id', 'amistades.id_amigo')
-      ->leftJoin('publicaciones', 'amistades.id_amigo', 'publicaciones.id_usuario')
-      ->select('users.name', 'users.apellido', 'users.foto_perfil', 'users.usuario', 'publicaciones.descripcion', 'publicaciones.imagen', 'publicaciones.created_at')
+      ->join('publicaciones', 'amistades.id_amigo', 'publicaciones.id_usuario')
+       ->select('amistades.id_amigo', 'publicaciones.id', 'users.name', 'users.apellido', 'users.foto_perfil', 'users.usuario'
+      ,'publicaciones.descripcion', 'publicaciones.imagen', 'publicaciones.created_at')
       ->where('amistades.id_usuario', '=', $id)
-      ->orderBy('publicaciones.created_at', 'DESC')
-      ->get();
+      ->orderBy('publicaciones.created_at', 'DESC')->get();
+
+
         return view('inicio')->with('publi', $publi)
           ->with('user', $user)
           ->with('post', $post)
