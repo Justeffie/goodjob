@@ -85,7 +85,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-      $imagen= '/storage/fotoPerfil/1.png';
+      $imagen= '/css/imagenes/avatar.png';
       if (isset($data['avatar'])) {
         $folder= 'fotoPerfil';
         $imagen = $data['usuario'] . '.' . $data['avatar']->extension();
