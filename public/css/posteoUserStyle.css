@@ -58,7 +58,7 @@ h4, .fotoperfil {
   width: 70px;
   overflow: hidden;
   position: absolute;
-  margin: 15px;  
+  margin: 15px;
 }
 .bas {
   width: 20px;
@@ -117,13 +117,13 @@ input[type=submit].input-borrar {
 
 @media (min-width:1024px) {
   .post-container {
-    width: 33%;
+    width: 46%;
   }
 
 }
 
 @media (min-width:1440px) {
   .post-container {
-    width: 400px;
+    width: 500px;
     }
 }

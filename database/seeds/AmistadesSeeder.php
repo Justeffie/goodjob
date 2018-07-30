@@ -11,6 +11,6 @@ class AmistadesSeeder extends Seeder
      */
     public function run()
     {
-        $usuarios = factory(App\Models\Amistades::class, 20)->create();
+        $usuarios = factory(App\Models\Amistades::class, 50)->create();
     }
 }

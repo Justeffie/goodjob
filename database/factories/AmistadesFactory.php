@@ -14,8 +14,8 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Models\Amistades::class, function (Faker $faker) {
     return [
-        'id_amigo' => $faker->numberBetween($min = 1, $max = 20),
-        'id_usuario' => $faker->unique()->numberBetween($min = 1, $max = 20),
+        'id_amigo' => $faker->numberBetween($min = 1, $max = 100),
+        'id_usuario' => $faker->unique()->numberBetween($min = 1, $max = 100),
     ];
 });
  ?>

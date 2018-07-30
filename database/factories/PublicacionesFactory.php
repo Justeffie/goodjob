@@ -17,8 +17,8 @@ $factory->define(App\Models\Publicacion::class, function (Faker $faker) {
         'imagen' => $faker->imageUrl($width= 640, $height= 480),
         'descripcion' => $faker->text,
         'me_gustas' => $faker->numberBetween($min = 1, $max = 100),
-        'id_categoria' => $faker->numberBetween($min = 1, $max = 5),
-        'id_usuario' => $faker->unique()->numberBetween($min = 1, $max = 20),
+        'id_categoria' => $faker->numberBetween($min = 1, $max = 7),
+        'id_usuario' => $faker->unique()->numberBetween($min = 1, $max = 100),
     ];
 });
  ?>

@@ -44,6 +44,6 @@ Route::get('/{usuario}', 'PerfilController@index')->name('perfil')->middleware('
 
 
 Route::get('/{usuario}/{imagen}', 'PosteosController@vistaPostUsuario')->middleware('auth');
-Route::post('/{usuario}/{imagen}', 'PosteosController@borrar');
-Route::get('/buscador', 'BuscadorController@index')->middleware('auth');;
-Route::post('/buscador', 'BuscadorController@buscador');
+Route::post('/{usuario}/{imagen}', 'PosteosController@borrar')->middleware('auth');
+Route::get('/buscador', 'BuscadorController@index')->middleware('auth');
+Route::post('/buscador', 'BuscadorController@buscador')->middleware('auth');
