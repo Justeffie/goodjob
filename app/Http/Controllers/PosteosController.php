@@ -44,7 +44,7 @@ class PosteosController extends Controller
       );
 
 
-      return redirect('/home');
+      return redirect('/' . \Auth::user()->usuario);
     }
 
     public function vistaPostUsuario(Request $request, $usuario, $imagen){

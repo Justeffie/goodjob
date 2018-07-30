@@ -15,6 +15,7 @@
   width: 95%;
   margin: 0 auto;
   overflow: hidden;
+  box-shadow: 7px 6px 135px -31px rgba(0,0,0,0.47);
 }
 
 .item-busc {

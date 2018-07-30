@@ -217,6 +217,7 @@ img.usuario, .barra-aside, .nombre-usuario, .barraSide, .publicar, .publica,
   width: 21%;
   margin-top: 109px;
   overflow: hidden;
+  box-shadow: 7px 22px 135px -60px rgba(0,0,0,0.47);
 
 }
 
@@ -225,6 +226,7 @@ img.usuario, .barra-aside, .nombre-usuario, .barraSide, .publicar, .publica,
   height: 146px;
   margin-top: 109px;
   overflow: hidden;
+  box-shadow: 7px 22px 135px -60px rgba(0,0,0,0.47);
 }
 img.usuario {
 width: 100%;
@@ -340,8 +342,9 @@ width: 99%;
     background-color: white;
     overflow: hidden;
     margin-top: 100px;
-    border: 2px solid orange;
-    border-radius: 30px;
+    border: 1px solid orange;
+    border-radius: 20px;
+    box-shadow: -5px 13px 128px -42px rgba(0,0,0,0.47);
 
 }
 

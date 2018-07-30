@@ -11,6 +11,8 @@
   overflow: hidden;
   background-color: white;
   margin-top: 100px;
+  box-shadow: 7px 22px 135px -60px rgba(0,0,0,0.47);
+
 }
 
 h4 {

@@ -44,7 +44,7 @@
           echo '<div class="publicacion-contenedor">
             <a class="publicacion-a" href="/'.$dato->usuario.'/' . substr($publi->imagen, 21) .
               '">
-                <img class="user-publicacion" src="'. $publi->imagen .'" alt="">
+                <img class="user-publicacion" src="/'. $publi->imagen .'" alt="">
               </a>
               </div>';
             }

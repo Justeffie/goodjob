@@ -74,6 +74,6 @@ class HomeController extends Controller
       );
 
 
-      return redirect('/home');
+      return redirect('/' . \Auth::user()->usuario);
     }
 }
