@@ -64,14 +64,12 @@ class PosteosController extends Controller
    }
 
    public function borrar(Request $request, $usuario, $imagen) {
-     $imagen = 'storage/fotosPosteos' . trim($imagen);
+     $imagen = 'storage/fotosPosteos/' . trim($imagen);
      $borrar = $request->input('borrar');
      $usuario = Auth::user()->usuario;
-     $user = Usuario::where('usuario','=',$usuario)->get();
+     $user = Usuario::find( \Auth::user()->id );
      if ($borrar) {
-       foreach ($user as $dato) {
-         $dato->publicacion()->where('imagen', 'LIKE', $imagen)->delete();
-       }
+        $user->publicacion()->where('imagen', 'LIKE', $imagen)->delete();
        return redirect('/' . $usuario);
      }
 

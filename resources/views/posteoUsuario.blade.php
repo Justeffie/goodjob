@@ -37,11 +37,7 @@
         <a  href="#"><img class="inter" src="/css/imagenes/compartir.png" alt=""></a>
       </div>
       <div class="borrar">
-        <form class="" action="/@php
-          foreach ($user as $dato) {
-            echo $dato->usuario;
-          }
-        @endphp" method="post">
+        <form class="" action="/{{\Auth::user()->usuario}}/{{ substr($post->imagen, 21)}}" method="post">
           {{ csrf_field() }}
 
           <div class="borrar-bor">
