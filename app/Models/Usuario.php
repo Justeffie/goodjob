@@ -33,6 +33,6 @@ class Usuario extends Model implements Authenticatable
     }
 
     public function amigos() {
-      return $this->belongsToMany(Amistades::class,'amistades', 'id_usuario', 'id');
+      return $this->hasMany(Amistades::class, 'id_usuario', 'id');
     }
 }

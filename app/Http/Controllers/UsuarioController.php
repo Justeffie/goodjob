@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
 use App\Models\Publicacion;
+use App\Models\Amistades;
 
 class UsuarioController extends Controller
 {
@@ -49,6 +50,36 @@ class UsuarioController extends Controller
       ->with('exito', 'Sus datos han sido actualizados');
 
     }
+
+    public function seguir(Request $request, $usuario) {
+      $id = $request->input('id');
+      $amigo = Usuario::find($id);
+      $amigo = $amigo->usuario;
+      if ($request->input('seguir')) {
+        Amistades::create(
+      [
+        'id_amigo' => $id,
+        'id_usuario' => \Auth::user()->id
+      ]
+    );
+      }
+      return redirect('/'.$amigo);
+    }
+
+// PARA DEJAR DE SEGUIR A UN USUARIO
+        /*public function dejarDeSeguir(Request $request, $usuario) {
+          $id = $request->input('id');
+          $amigo = Usuario::find($id);
+          $user = Usuario::where('usuario', 'LIKE', \Auth::user()->usuario);
+
+          if ($request->input('seguido')) {
+            Amistades::where('id_amigo', 'LIKE', $id)
+            ->where('id_usuario', 'LIKE', \Auth::user()->id)
+            ->delete();
+          }
+          $amigo = $amigo->usuario;
+          return redirect('/'. $amigo);
+        }*/
 
 
 }

@@ -39,7 +39,11 @@ Route::get('logout', 'Auth\LoginController@logout');
 Route::get('/postear', 'PosteosController@index')->middleware('auth');
 Route::post('/postear', 'PosteosController@postUsuario')->middleware('auth');
 Route::get('/{usuario}', 'PerfilController@index')->name('perfil')->middleware('auth');
+
+
 Route::get('/{usuario}/{imagen}', 'PosteosController@vistaPostUsuario')->middleware('auth');
 Route::post('/{usuario}/{imagen}', 'PosteosController@borrar')->middleware('auth');
 Route::get('/buscador', 'BuscadorController@index')->middleware('auth');
 Route::post('/buscador', 'BuscadorController@buscador')->middleware('auth');
+Route::post('/{usuario}', 'UsuarioController@seguir')->middleware('auth');
+//Route::post('/{usuario}', 'UsuarioController@dejarDeSeguir')->middleware('auth');

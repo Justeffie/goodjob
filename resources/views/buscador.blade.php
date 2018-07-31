@@ -18,7 +18,7 @@
           </article>
 @elseif (count($usuarios) >= 1)
     @foreach($usuarios as $usuario)
-    <a class="link-busc" href="#">
+    <a class="link-busc" href="/{{$usuario->usuario}}">
     <article class="item-busc">
       <div class="item-imag">
         <img src="{{$usuario->foto_perfil}}" alt="">
@@ -34,6 +34,9 @@
     @endforeach
 @endif
   </section>
+  <div class="paginado">
     {{$usuarios->links()}}
+  </div>
+
 @endsection
 </html>

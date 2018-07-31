@@ -11,6 +11,16 @@
   margin-top: 110px;
 }
 
+.paginado {
+  overflow: hidden;
+  width: 44px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pagination, .page-item, .page-item.active, .page-item.disable {
+  display: inline-block;
+}
+
 .buscador-cont {
   width: 95%;
   margin: 0 auto;

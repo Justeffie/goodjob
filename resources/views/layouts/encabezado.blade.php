@@ -6,9 +6,7 @@
         <input id="act" type="checkbox" name="act" value="">
         <label for="act">
           <div class="perfil-img-contenedor">
-          <img class="perfil" src="@foreach ($user as $dato)
-            {{$dato->foto_perfil}}
-          @endforeach" alt="">
+          <img class="perfil" src="{{\Auth::user()->foto_perfil}}" alt="">
         </div>
         </label>
         <form class="search" action="/buscador" method="post">
@@ -17,14 +15,8 @@
         </form>
         <div class="barra-contenedor">
           <ul class="barralat">
-            <li><div class="perfil-container"><img class="perfil-barralat" src="@foreach ($user as $dato)
-              {{$dato->foto_perfil}}
-            @endforeach" alt=""></div><p id="user">{{ Auth::user()->name }}</p></li>
-            <li class="barra"><a href="/@php
-              foreach ($user as $dato) {
-                echo $dato->usuario;
-              }
-            @endphp""><img src="/css/imagenes/user.png" alt="">Perfil</a></li>
+            <li><div class="perfil-container"><img class="perfil-barralat" src="{{\Auth::user()->foto_perfil}}" alt=""></div><p id="user">{{ Auth::user()->name }}</p></li>
+            <li class="barra"><a href="/{{\Auth::user()->usuario}}"><img src="/css/imagenes/user.png" alt="">Perfil</a></li>
             <li class="barra"><a href="configuracion"><img src="/css/imagenes/configuracion.png" alt="">Configuración</a></li>
             <li class="barra">
               <form class="" action="{{ route('logout') }}" method="post">

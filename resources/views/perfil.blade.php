@@ -33,7 +33,25 @@
       <p class="seguir">/</p>
       <a class="seguir" href="#">0 Seguidos</a>
       </div>
-      <!--<img src="" class="seguir" alt="">-->
+
+      <!-- formulario para seguir a un usuario -->
+@foreach ($user as $dato)
+  <form class="form-seguir" action="/{{$dato->usuario}}" method="post">
+    {{csrf_field()}}
+    <div class="seguir-boton">
+      <label for=""><img id="seguir" src="css/imagenes/seguir.png" alt=""></label>
+      <input style="display:none" type="submit" name="seguir" value="Seguir">
+      <input style="visibility:hidden" type="text" name="id" value="{{$dato->id}}">
+
+
+      <img  id="seguido" src="css/imagenes/seguido.png" alt="">
+      <input style="display:none" type="submit" name="seguido" value="Dejar de seguir">
+    </div>
+  </form>
+@endforeach
+
+
+
       <p class="biografia">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
   </aside>

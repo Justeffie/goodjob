@@ -36,17 +36,25 @@
         <a href="#"><img class="inter"  src="/css/imagenes/comentario.png" alt=""></a>
         <a  href="#"><img class="inter" src="/css/imagenes/compartir.png" alt=""></a>
       </div>
-      <div class="borrar">
-        <form class="" action="/{{\Auth::user()->usuario}}/{{ substr($post->imagen, 21)}}" method="post">
-          {{ csrf_field() }}
+      @php
+        foreach ($user as $dato) {
+          if ($dato->usuario === \Auth::user()->usuario) {
+            echo '<div class="borrar">
+                <form class="" action="/' . \Auth::user()->usuario .'/'.substr($post->imagen, 21).'" method="post">'
+                  .csrf_field().
 
-          <div class="borrar-bor">
-            <img class="bas" src="/css/imagenes/borrar.png" alt="">
-          </div>
-          <input class="input-borrar" type="submit" name="borrar" value="Borrar">
-          <textarea style='visibility:hidden' name="img" rows="1" cols="1">{{$post->imagen}}</textarea>
-        </form>
-      </div>
+                  '<div class="borrar-bor">
+                    <img class="bas" src="/css/imagenes/borrar.png" alt="">
+                  </div>
+                  <input class="input-borrar" type="submit" name="borrar" value="Borrar">
+
+                </form>
+              </div>';
+          }
+        }
+      @endphp
+
+
     </div>
 
 
