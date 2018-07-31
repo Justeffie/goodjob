@@ -10,20 +10,21 @@
   </head>
 
 @section('contenido')
-  <section class="buscador-cont">
-
     @if ($usuarios === [])
+        <section class="buscador-cont">
       <article class="item-busc">
       <p id="no-result">No ha realizado ninguna búsqueda</p>
       </article>
   </section>
   @elseif (count($usuarios) === 0)
+      <section class="buscador-cont">
           <article class="item-busc">
           <p id="no-result">No se han encontrado resultados</p>
           </article>
             </section>
 @elseif (count($usuarios) >= 1)
     @foreach($usuarios as $usuario)
+        <section class="buscador-cont">
     <a class="link-busc" href="/{{$usuario->usuario}}">
     <article class="item-busc">
       <div class="item-imag">

@@ -6,6 +6,7 @@ use Auth;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
 
+
 class PerfilController extends Controller
 {
 

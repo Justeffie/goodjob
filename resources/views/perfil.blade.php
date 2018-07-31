@@ -35,27 +35,48 @@
       </div>
 
       <!-- formulario para seguir a un usuario -->
-@foreach ($user as $dato)
-  <form class="form-seguir" action="/seguir/{{$dato->usuario}}" method="post">
-    {{csrf_field()}}
-    <div class="seguir-boton">
-      <label for=""><img id="seguir" src="css/imagenes/seguir.png" alt=""></label>
-      <input style="" type="submit" name="seguir" value="Seguir">
-      <input style="visibility:hidden" type="text" name="id" value="{{$dato->id}}">
-    </div>
-  </form>
+  @foreach ($user as $dato)
+    @php
+    $find = '';
+      $rel = (App\Models\Usuario::find(\Auth::user()->id)->amigos()->where('id_amigo', '=', $dato->id)->get());
+      foreach ($rel as $datos) {
+        $find= $datos['id'];
+      }
+    @endphp
+      @if (($dato->usuario !== \Auth::user()->usuario) && ($find >= 1))
+        <form class="form-seguir" action="/dejarseguir/{{$dato->usuario}}" method="post">
+          {{csrf_field()}}
+          <div id="seguido" class="seguir-boton">
+            <input  style="display:none" type="text" name="id" value="{{$dato->id}}">
+              <input class="seg" type="submit" name="seguido" value="Dejar de seguir">
+          </div>
+        </form>
+@elseif (($dato->usuario !==\Auth::user()->usuario) && ($find == ''))
+<form class="form-seguir" action="/seguir/{{$dato->usuario}}" method="post">
+  {{csrf_field()}}
+  <div id="seguir" class="seguir-boton">
+    <input class="seg" type="submit" name="seguir" value="Seguir">
+    <input style="display:none" type="text" name="id" value="{{$dato->id}}">
+  </div>
+</form>
 
-  <form class="form-seguir" action="/dejarseguir/{{$dato->usuario}}" method="post">
-    {{csrf_field()}}
-    <div class="seguir-boton">
-      <input style="visibility:hidden" type="text" name="id" value="{{$dato->id}}">
-      <img  id="seguido" src="css/imagenes/seguido.png" alt="">
-      <input style="" type="submit" name="seguido" value="Dejar de seguir">
-    </div>
-  </form>
-@endforeach
-
-
+      @elseif ($dato->usuario === \Auth::user()->usuario)
+      <form style="display:none" class="form-seguir" action="/seguir/{{$dato->usuario}}" method="post">
+        {{csrf_field()}}
+        <div style="display:none" id="seguir" class="seguir-boton">
+          <input style="display:none" class="seg" type="submit" name="seguir" value="Seguir">
+          <input style="display:none" type="text" name="id" value="{{$dato->id}}">
+        </div>
+      </form>
+      <form style="display:none" class="form-seguir" action="/dejarseguir/{{$dato->usuario}}" method="post">
+        {{csrf_field()}}
+        <div style="display:none" id="seguido" class="seguir-boton">
+          <input style="display:none" type="text" name="id" value="{{$dato->id}}">
+            <input style="display:none" class="seg" type="submit" name="seguido" value="Dejar de seguir">
+        </div>
+      </form>
+@endif
+  @endforeach
 
       <p class="biografia">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>

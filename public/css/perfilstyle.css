@@ -16,14 +16,21 @@
     padding-top: 35px;
 
  }
- .seguir-boton {
-   width: 44px;
-   margin-left: auto;
-   margin-right: auto;
- }
  #seguir, #seguido {
-   width: 45px;
-   display: none;
+    padding: 8px;
+    border: 3px solid orange;
+    border-radius: 35%;
+    margin: 10px auto 20px auto;
+ }
+ #seguir {
+   width: 64px;
+ }
+#seguido {
+  width: 122px;
+padding: 11px;
+}
+ .seg {
+   font-size: 0.9rem;
  }
  .datos-fotoperfil-contenedor {
    width: 60px;
