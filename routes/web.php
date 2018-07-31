@@ -26,24 +26,24 @@ Route::get('/faq.php', 'IndexController@faq');
 //Route::get('/resgistrarte.php', 'Auth\RegisterController@showRegistrationForm');
 //Route::post('/resgistrarte.php', 'RegistroController@validacion');
 //Route::get('/inicio.php', 'IndexController@inicio');
-Route::get('/usuarios', 'UsuarioController@lista');
-Route::get('/usuario/{id}', 'UsuarioController@info');
-Route::post('/usuario/{id}', 'UsuarioController@actualizar');
+//Route::get('/usuarios', 'UsuarioController@lista');
+//Route::get('/usuario/{id}', 'UsuarioController@info');
+//Route::post('/usuario/{id}', 'UsuarioController@actualizar');
+
+
 
 Auth::routes();
+Route::post('/seguir/{usuario}', 'UsuarioController@seguir')->middleware('auth');
+Route::post('/dejarseguir/{usuario}', 'UsuarioController@dejarDeSeguir')->middleware('auth');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/home', 'HomeController@postUsuario');
 Route::get('logout', 'Auth\LoginController@logout');
+Route::get('/buscador', 'BuscadorController@index')->middleware('auth');
+//Route::post('/buscador', 'BuscadorController@buscador')->middleware('auth');
 //Route::get('/home', 'InicioController@user');
 Route::get('/postear', 'PosteosController@index')->middleware('auth');
 Route::post('/postear', 'PosteosController@postUsuario')->middleware('auth');
 Route::get('/{usuario}', 'PerfilController@index')->name('perfil')->middleware('auth');
-
-
 Route::get('/{usuario}/{imagen}', 'PosteosController@vistaPostUsuario')->middleware('auth');
 Route::post('/{usuario}/{imagen}', 'PosteosController@borrar')->middleware('auth');
-Route::get('/buscador', 'BuscadorController@index')->middleware('auth');
-Route::post('/buscador', 'BuscadorController@buscador')->middleware('auth');
-Route::post('/{usuario}', 'UsuarioController@seguir')->middleware('auth');
-//Route::post('/{usuario}', 'UsuarioController@dejarDeSeguir')->middleware('auth');

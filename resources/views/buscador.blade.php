@@ -11,11 +11,17 @@
 
 @section('contenido')
   <section class="buscador-cont">
-    @if (count($usuarios) === 0)
 
+    @if ($usuarios === [])
+      <article class="item-busc">
+      <p id="no-result">No ha realizado ninguna búsqueda</p>
+      </article>
+  </section>
+  @elseif (count($usuarios) === 0)
           <article class="item-busc">
           <p id="no-result">No se han encontrado resultados</p>
           </article>
+            </section>
 @elseif (count($usuarios) >= 1)
     @foreach($usuarios as $usuario)
     <a class="link-busc" href="/{{$usuario->usuario}}">
@@ -31,12 +37,14 @@
       </div>
     </article>
     </a>
+      </section>
+    <div class="paginado">
+      {{$usuarios->links()}}
+    </div>
     @endforeach
 @endif
-  </section>
-  <div class="paginado">
-    {{$usuarios->links()}}
-  </div>
+
+
 
 @endsection
 </html>

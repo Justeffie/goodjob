@@ -9,9 +9,12 @@
           <img class="perfil" src="{{\Auth::user()->foto_perfil}}" alt="">
         </div>
         </label>
-        <form class="search" action="/buscador" method="post">
+        <form class="search" action="/buscador" method="get">
           {{csrf_field()}}
-          <input type="search" name="explorar" placeholder="Buscar"><img class="lupa" src="/css/imagenes/lupa2.png" alt="">
+          <input type="search" name="explorar" placeholder="Buscar">
+          <button type="submit" name="explora" style="background-color:#F5F5F5;border:none">
+            <img class="lupa" src="/css/imagenes/lupa2.png" alt="">
+          </button>
         </form>
         <div class="barra-contenedor">
           <ul class="barralat">

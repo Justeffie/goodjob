@@ -57,29 +57,29 @@ class UsuarioController extends Controller
       $amigo = $amigo->usuario;
       if ($request->input('seguir')) {
         Amistades::create(
-      [
-        'id_amigo' => $id,
-        'id_usuario' => \Auth::user()->id
-      ]
-    );
+        [
+          'id_amigo' => $id,
+          'id_usuario' => \Auth::user()->id
+        ]
+        );
       }
       return redirect('/'.$amigo);
     }
 
-// PARA DEJAR DE SEGUIR A UN USUARIO
-        /*public function dejarDeSeguir(Request $request, $usuario) {
-          $id = $request->input('id');
-          $amigo = Usuario::find($id);
-          $user = Usuario::where('usuario', 'LIKE', \Auth::user()->usuario);
 
-          if ($request->input('seguido')) {
-            Amistades::where('id_amigo', 'LIKE', $id)
-            ->where('id_usuario', 'LIKE', \Auth::user()->id)
-            ->delete();
-          }
-          $amigo = $amigo->usuario;
-          return redirect('/'. $amigo);
-        }*/
+    public function dejarDeSeguir(Request $request, $usuario) {
+      $id = $request->input('id');
+      $amigo = Usuario::find($id);
+      $user = Usuario::where('usuario', 'LIKE', \Auth::user()->usuario);
+
+      if ($request->input('seguido')) {
+        Amistades::where('id_amigo', '=', $id)
+        ->where('id_usuario', '=', \Auth::user()->id)
+        ->delete();
+      }
+      $amigo = $amigo->usuario;
+      return redirect('/'. $amigo);
+    }
 
 
 }
