@@ -1,5 +1,6 @@
 window.onload= function(){
     var form= document.getElementById('formulario');
+    var campoValidado = false;
 
 
     var elementosDelFormulario=[];
@@ -22,12 +23,24 @@ window.onload= function(){
 
         emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
-        if (emailRegex.test(campo.value)) {
-          valido.innerText = "válido";
-        } else {
-          valido.innerText = "incorrecto";
-        }
+            if (emailRegex.test(campo.value)) {
+              valido.innerText = "válido";
+                campoValidado= true;
+              } else {
+              valido.innerText = "incorrecto";
+              campoValidado= false;
+            }
     });
+
+
+
+    for (element of elementosDelFormulario){
+        if(this.value==''){
+          campoValidado= false;
+
+        }
+      }
+
 
 
     for (element of elementosDelFormulario){
@@ -49,29 +62,14 @@ window.onload= function(){
       })
     }
 
-
     form.onsubmit= function(event){
+      event.preventDefault();
+      if (campoValidado== false){
+            alert ("falta completar los campos");
 
-
-          for (element of elementosDelFormulario){
-
-            element.addEventListener('blur', function() {
-
-              if(this.value==''){
-
-                this.style.borderColor="red";
-                this.placeholder= 'Campo obligatorio';
-
-              }
-
-              else{
-                this.style.borderColor="green";
-              }
-
-
-            })
-          }
-
+      } else {
+        alert ("vamos al login");
+      }
     }
 
   }
