@@ -12,7 +12,7 @@
         <form class="search" action="/buscador" method="get">
           {{csrf_field()}}
           <input type="search" name="explorar" placeholder="Buscar">
-          <button type="submit" name="explora" style="background-color:#F5F5F5;border:none">
+          <button class="exp" type="submit" name="explora">
             <img class="lupa" src="/css/imagenes/lupa2.png" alt="">
           </button>
         </form>

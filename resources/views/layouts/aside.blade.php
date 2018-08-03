@@ -2,12 +2,23 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="/css/iniciostyle.css">
+    <link rel="stylesheet" href="@if (isset($_COOKIE['switch']))
+      @if ($_COOKIE['switch'] === 'dark')
+          /css/darkthemes/darkiniciostyle.css
+      @else
+          /css/iniciostyle.css
+        @endif
+    @else
+      /css/iniciostyle.css
+    @endif">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Inicio</title>
   </head>
   <body>
+    @php
+
+    @endphp
     <header>
       <div class="head-contenedor">
       <div class="head">
@@ -23,7 +34,7 @@
         <form class="search" action="/buscador" method="get">
           {{csrf_field()}}
           <input type="search" name="explorar" placeholder="Buscar">
-          <button type="submit" name="explora" style="background-color:#F5F5F5;border:none">
+          <button id="exp" type="submit" name="explora">
             <img class="lupa" src="/css/imagenes/lupa2.png" alt="">
           </button>
         </form>
@@ -35,11 +46,9 @@
               {{$dato->name}}
             @endforeach</p></li>
             <li class="barra">
-              <a href="/@php
-                foreach ($user as $dato) {
-                  echo $dato->usuario;
-                }
-              @endphp">
+              <a href="/@foreach ($user as $dato)
+                {{$dato->usuario}}
+              @endforeach">
             <img src="/css/imagenes/user.png" alt="">Perfil</a></li>
             <li class="barra"><a href="configuracion"><img src="/css/imagenes/configuracion.png" alt="">Configuración</a></li>
             <li class="barra">
@@ -78,11 +87,9 @@
               <p class="nombre-usuario">@foreach ($user as $dato)
                 {{$dato->name}}
               @endforeach</p>
-            <li class="barra"><a href="/@php
-              foreach ($user as $dato) {
-                echo $dato->usuario;
-              }
-            @endphp"><img src="css/imagenes/user.png" alt="">Perfil</a></li>
+            <li class="barra"><a href="/@foreach ($user as $dato)
+              {{$dato->usuario}}
+            @endforeach"><img src="css/imagenes/user.png" alt="">Perfil</a></li>
             <li class="barra"><a href="#"><img src="css/imagenes/configuracion.png" alt="">Configuración</a></li>
             <li class="barra">
               <form class="" action="{{ route('logout') }}" method="post">
@@ -91,11 +98,13 @@
                 <input type="submit" name="cerrar" value="Cerrar Sesión">
                 </form>
               </li>
+              <li> <button id="switch" type="button" name="dark">Modo Oscuro</button></li>
           </div>
-          </ul>
+        </ul>
         </div>
       </aside>
       @yield('contenido')
     </div>
+    <script src="/js/inicioscript.js"></script>
   </body>
 </html>

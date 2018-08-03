@@ -3,8 +3,24 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/iniciostyle.css">
-    <link rel="stylesheet" href="/css/buscadorstyle.css">
+    <link rel="stylesheet" href="@if (isset($_COOKIE['switch']))
+      @if ($_COOKIE['switch'] === 'dark')
+          /css/darkthemes/darkiniciostyle.css
+      @else
+          /css/iniciostyle.css
+        @endif
+    @else
+      /css/iniciostyle.css
+    @endif">
+    <link rel="stylesheet" href="@if (isset($_COOKIE['switch']))
+      @if ($_COOKIE['switch'] === 'dark')
+          /css/darkthemes/darkbuscadorstyle.css
+      @else
+          /css/buscadorstyle.css
+        @endif
+    @else
+      /css/buscadorstyle.css
+    @endif">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscador</title>
   </head>
