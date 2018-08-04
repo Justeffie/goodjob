@@ -39,7 +39,7 @@
                              </div>
                              <div class="comentarios">
                                <form action="index.html" method="post">
-                                 <input class="coment" type="text" name="" value="Escribí un comentario">
+                                 <input class="coment" type="text" name="" placeholder="Escribí un comentario">
                                </form>
                              </div>
                            </article>';

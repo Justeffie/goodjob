@@ -146,9 +146,6 @@ section.trabajos {
     margin: 0 57px;
   }
 
-  .perfil-perf {
-    height: 221px;
-  }
 }
 
 @media (min-width: 1024px) {
