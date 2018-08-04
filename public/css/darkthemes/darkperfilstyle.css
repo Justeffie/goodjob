@@ -12,8 +12,9 @@
     padding-bottom: 40px;
     margin-left: auto;
     margin-right: auto;
-    background-color: white;
+    background-color: #262533;
     padding-top: 35px;
+    border: 1px solid #adadf3;
 
  }
  #seguir, #seguido {
@@ -29,6 +30,10 @@
   width: 122px;
 padding: 11px;
 }
+.exp {
+  background-color: #262533;
+  border:none
+}
  .seg {
    font-size: 0.9rem;
  }
@@ -43,6 +48,7 @@ padding: 11px;
   font-size: 0.7rem;
   text-align: center;
   margin-top: 5px;
+  color: white;
 }
  .fotoperfil {
    width: 100%;
@@ -57,12 +63,14 @@ padding: 11px;
 
  h4 {
    text-align: center;
+    color: white;
  }
 
 .seguir {
   display: inline-block;
   font-size: 0.7rem;
   text-align: center;
+  color: white;
 }
 
 .datos.seguidores
@@ -75,6 +83,7 @@ padding: 11px;
   font-size: 0.8rem;
   text-align: center;
   padding: 10px;
+  color: white;
 }
 
 /* USER PUBLICACION */

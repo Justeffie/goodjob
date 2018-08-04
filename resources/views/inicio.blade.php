@@ -9,7 +9,7 @@
                 <form class="search" action="/buscador" method="get">';
                   echo csrf_field();
                 echo  '<input type="search" name="explorar" placeholder="Buscar">
-                <button type="submit" name="explora" style="background-color:white;border:none">
+                <button class="exp" type="submit" name="explora">
                   <img class="lupa" src="/css/imagenes/lupa2.png" alt="">
                 </button>
                 </form>
@@ -39,7 +39,7 @@
                              </div>
                              <div class="comentarios">
                                <form action="index.html" method="post">
-                                 <input class="coment" type="text" name="" value="Escribí un comentario">
+                                 <input class="coment" type="text" name="" placeholder="Escribí un comentario">
                                </form>
                              </div>
                            </article>';

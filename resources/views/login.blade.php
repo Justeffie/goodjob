@@ -9,6 +9,11 @@
     <title>Ingresar a Good Job</title>
   </head>
   <body>
+    <script src="../../public/js/validacionLogin.js">
+
+    </script>
+
+
       @section('content')
 <div class="transparencia">
     <div class="headcont">
@@ -16,14 +21,14 @@
     </div>
   </header>
 </header>
-    <form class="usuario" action="{{ route('login') }}" method="post">
+    <form class="usuario" action="{{ route('login') }}" method="post" id="formulario">
           {{csrf_field()}}
   <div class="imgcontainer">
     <img src="https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-hacker-3830b32ad9e0802c-512x512.png" alt="Avatar" class="avatar">
   </div>
   <div class="container">
     <label><b>Direccion de Email:</b></label>
-      <input type="text" placeholder="" name="email" value="{{old('email')}}">
+      <input type="text" placeholder="" name="email" value="{{old('email')}}" id="email">
 
       <br>
       @if ($errors->has('email'))
@@ -33,7 +38,7 @@
       @endif
             <br>
     <label><b>Contraseña:</b></label>
-    <input type="password" placeholder="" name="password" >
+    <input type="password" placeholder="" name="password" id="password">
 
     @if ($errors->has('password'))
         <span class="invalid-feedback" role="alert">
@@ -50,6 +55,7 @@
     <span ><a class="pass" href="contraseña.php">¿Te olvidaste la contraseña?</a></span>
   </div>
 </form>
+
 </div>
     @endsection
   </body>

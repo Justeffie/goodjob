@@ -2,8 +2,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="/css/iniciostyle.css">
-    <link rel="stylesheet" href="/css/posteoUserStyle.css">
+    <link rel="stylesheet" href="@if (isset($_COOKIE['switch']))
+      @if ($_COOKIE['switch'] === 'dark')
+          /css/darkthemes/darkiniciostyle.css
+      @else
+          /css/iniciostyle.css
+        @endif
+    @else
+      /css/iniciostyle.css
+    @endif">
+    <link rel="stylesheet" href="@if (isset($_COOKIE['switch']))
+      @if ($_COOKIE['switch'] === 'dark')
+          /css/darkthemes/darkposteouserstyle.css
+      @else
+          /css/posteoUserStyle.css
+        @endif
+    @else
+      /css/posteoUserStyle.css
+    @endif">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Trabajo de @foreach ($user as $dato)
