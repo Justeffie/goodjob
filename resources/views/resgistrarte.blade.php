@@ -9,11 +9,6 @@
     <title>Resgistrate a Good job</title>
   </head>
   <body>
-    <script src="/js/validacionRegistro.js">
-
-    </script>
-
-
 
 @section('content')
 <div class="transparencia">
@@ -21,7 +16,7 @@
 <h3> Registrate </h3>
 </div>
 <div class="formulario">
-    <form  method="post" action="{{route('register')}}" enctype="multipart/form-data" id="formulario">
+    <form  method="post" action="{{route('register')}}" enctype="multipart/form-data" id="formRegistro">
       {{csrf_field()}}
       <div class="container contform">
         <div class="forma">
@@ -87,11 +82,15 @@
 <label>Foto de perfil </label> <br>
 <input id="regAvatar" type="file" name="avatar" value="">
 </div>
-  <button type="submit">Enviar</button>
+  <button type="submit" id="botonEnviar">Enviar</button>
 </div>
   </form>
 </div>
 </div>
+<script src="/js/validacionRegistro.js">
+
+</script>
 @endsection
+
   </body>
 </html>
