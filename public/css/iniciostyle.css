@@ -78,7 +78,7 @@ input#act {
 .barra-contenedor {
   clear: both;
   width: 70%;
-  height: 230px;
+  height: 284px;
   margin-left: 15px;
   overflow: hidden;
   background-color: #F5F5F5;
@@ -208,8 +208,17 @@ a {
 
 /*ASIDE */
 
-#switch {
-  display:none
+#switch, #switch2 {
+  margin-left: 46px;
+  margin-top: 22px;
+  background-color: black;
+  border: solid white 1px;
+  color: white;
+  padding: 7px;
+  border-radius: 13%;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: bolder;
 }
 img.usuario, .barra-aside, .nombre-usuario, .barraSide, .publicar, .publica,
 .compartir, .right-container, .left-container {

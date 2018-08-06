@@ -77,7 +77,6 @@
       <p>ya somos <span id="cantUser"></span> usuarios</p>
 
     </div>
-    <script src="/js/contUsuarios.js">
-
-    </script>
+  <script src="/js/contUsuarios.js">
+  </script>
     @endsection

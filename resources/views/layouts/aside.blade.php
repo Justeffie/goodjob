@@ -12,9 +12,6 @@
     <title>Inicio</title>
   </head>
   <body>
-    @php
-
-    @endphp
     <header>
       <div class="head-contenedor">
       <div class="head">
@@ -53,6 +50,7 @@
                 <input type="submit" name="cerrar" value="Cerrar Sesión">
               </form>
               </li>
+              <li> <button id="switch2" type="button" name="dark">Modo Oscuro</button></li>
           </ul>
         </div>
         </div>

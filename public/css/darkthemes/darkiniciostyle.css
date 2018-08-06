@@ -82,10 +82,10 @@ input#act {
 .barra-contenedor {
   clear: both;
   width: 70%;
-  height: 230px;
+  height: 284px;
   margin-left: 15px;
   overflow: hidden;
-  background-color: #F5F5F5;
+  background-color: #262533;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-bottom: solid;
   z-index: 5;
@@ -95,6 +95,19 @@ input#act {
   width: 100%;
   padding-top: 16px;
   background-color: #2c2c4e;
+}
+#switch2 {
+  display: block;
+    margin-left: 46px;
+    margin-top: 22px;
+    background-color: white;
+    border: solid white 1px;
+    color: black;
+    padding: 7px;
+    border-radius: 13%;
+    cursor: pointer;
+    font-size: 0.7rem;
+    font-weight: bolder;
 }
 #user-amigo {
   border-bottom: 1px solid grey;
@@ -107,6 +120,7 @@ input#act {
   margin-bottom: 38px;
   border-bottom: 1px solid grey;
   padding: 4px;
+  color:white;
 }
 
 .perfil-container {
@@ -513,7 +527,7 @@ img.nav {
 
 
 @media (min-width:1024px) {
-  #switch {
+  #switch, #switch2 {
     display: block;
     margin-left: 46px;
     margin-top: 22px;
