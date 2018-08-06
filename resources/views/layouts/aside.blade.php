@@ -2,15 +2,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="@if (isset($_COOKIE['switch']))
-      @if ($_COOKIE['switch'] === 'dark')
-          /css/darkthemes/darkiniciostyle.css
-      @else
-          /css/iniciostyle.css
-        @endif
-    @else
-      /css/iniciostyle.css
-    @endif">
+    <link rel="stylesheet" href="<?php if((isset($_COOKIE['switch'])) && ($_COOKIE['switch'] === 'dark')){
+          echo '/css/darkthemes/darkiniciostyle.css';
+      }else{
+          echo '/css/iniciostyle.css';
+        }?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Inicio</title>
@@ -46,9 +42,9 @@
               {{$dato->name}}
             @endforeach</p></li>
             <li class="barra">
-              <a href="/@foreach ($user as $dato)
-                {{$dato->usuario}}
-              @endforeach">
+              <a href="/<?php foreach ($user as $dato) {
+                echo trim($dato->usuario);
+              }?>">
             <img src="/css/imagenes/user.png" alt="">Perfil</a></li>
             <li class="barra"><a href="configuracion"><img src="/css/imagenes/configuracion.png" alt="">Configuración</a></li>
             <li class="barra">
@@ -87,9 +83,9 @@
               <p class="nombre-usuario">@foreach ($user as $dato)
                 {{$dato->name}}
               @endforeach</p>
-            <li class="barra"><a href="/@foreach ($user as $dato)
-              {{$dato->usuario}}
-            @endforeach"><img src="css/imagenes/user.png" alt="">Perfil</a></li>
+            <li class="barra"><a href="/<?php foreach ($user as $dato) {
+              echo trim($dato->usuario);
+            }?>"><img src="css/imagenes/user.png" alt="">Perfil</a></li>
             <li class="barra"><a href="#"><img src="css/imagenes/configuracion.png" alt="">Configuración</a></li>
             <li class="barra">
               <form class="" action="{{ route('logout') }}" method="post">

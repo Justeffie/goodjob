@@ -19,7 +19,7 @@
  }
  #seguir, #seguido {
     padding: 8px;
-    border: 3px solid orange;
+    border: 3px solid #adadf3;
     border-radius: 35%;
     margin: 10px auto 20px auto;
  }
@@ -27,12 +27,16 @@
    width: 64px;
  }
 #seguido {
-  width: 122px;
+  width: 124px;
 padding: 11px;
 }
 .exp {
   background-color: #262533;
   border:none
+}
+input[type=submit].seg:hover {
+  background-color: #262533;
+  color: white;
 }
  .seg {
    font-size: 0.9rem;
