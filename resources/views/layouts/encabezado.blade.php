@@ -9,10 +9,10 @@
           <img class="perfil" src="{{\Auth::user()->foto_perfil}}" alt="">
         </div>
         </label>
-        <form class="search" action="/buscador" method="get">
-          {{csrf_field()}}
+        <form class="search" action="/buscador?explorar={{ Input::get('explorar') ?? ''}}" method="get">
+        
           <input type="search" name="explorar" placeholder="Buscar">
-          <button class="exp" type="submit" name="explora">
+          <button class="exp" type="submit">
             <img class="lupa" src="/css/imagenes/lupa2.png" alt="">
           </button>
         </form>
@@ -35,10 +35,10 @@
           <div class="nav-principal">
           <ul>
             <li><a class="navegador" href="/home"><img class="nav" src="/css/imagenes/inicio.png" alt="Inicio"></a></li>
-            <li><a class="navegador" href="/postear"><img class="nav" src="/css/imagenes/notificacion.png" alt="Notificaciones"></a></li>
+            <li><a class="navegador" href="/"><img class="nav" src="/css/imagenes/notificacion.png" alt="Notificaciones"></a></li>
             <li><a class="navegador" href="/postear"><img class="nav" src="/css/imagenes/escribir.png" alt="Compartir"></a></li>
-            <li><a class="navegador" href="/postear"><img class="nav" src="/css/imagenes/mensajes.png" alt="Mensajes"></a></li>
-            <li><a class="navegador" href="/postear"><img class="nav" src="/css/imagenes/trabajo2.png" alt="Empleos"></a></li>
+            <li><a class="navegador" href="/"><img class="nav" src="/css/imagenes/mensajes.png" alt="Mensajes"></a></li>
+            <li><a class="navegador" href="/"><img class="nav" src="/css/imagenes/trabajo2.png" alt="Empleos"></a></li>
           </ul>
           </div>
         </nav>

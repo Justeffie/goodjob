@@ -1,22 +1,38 @@
-//     window.onload= function(){
-//     var form= document.getElementById('formulario');
-//       form.onsubmit= function(event){
-//
-//           var email= document.getElementById('email');
-//           var password= document.getElementById("password");
-//
-//           if((email.value == "")||(password.value == "")){
-//               event.preventDefault();
-//               window.alert("Los campos email y contraseña no pueden estar vacios");
-//           }
-//       }
-// }
+window.onload = function(){
 
-    window.onload= function(){
-    var form= document.getElementById('formulario');
-      form.onsubmit= function(event){
+  var form = document.getElementById('formulario');
 
-      var email= document.getElementById('email');
-      var password= document.getElementById("password");
+  form.addEventListener('submit', function(ev){
 
-      
+    ev.preventDefault();
+
+    let email = document.getElementById('email');
+    fetch(`http://localhost:8000/api/verificarusuario/${email.value}`)
+      .then(function(res){
+        return res.json()
+      }).then( function(data){
+        console.log(data)
+        let respuesta='El usuario no existe'
+        if(data>0){
+          respuesta='El usuario existe';
+
+
+          form.submit();
+        }
+        else {
+            document.getElementById('errormail').innerText = respuesta;
+
+
+
+
+        }
+
+
+
+
+      }).catch(function(err){
+        console.error(err)
+      });
+
+  });
+}

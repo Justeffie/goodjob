@@ -2,24 +2,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="@if (isset($_COOKIE['switch']))
-      @if ($_COOKIE['switch'] === 'dark')
-          /css/darkthemes/darkiniciostyle.css
-      @else
-          /css/iniciostyle.css
-        @endif
-    @else
-      /css/iniciostyle.css
-    @endif">
-    <link rel="stylesheet" href="@if (isset($_COOKIE['switch']))
-      @if ($_COOKIE['switch'] === 'dark')
-          /css/darkthemes/darkperfilstyle.css
-      @else
-          /css/perfilstyle.css
-        @endif
-    @else
-      /css/perfilstyle.css
-    @endif">
+    <link rel="stylesheet" href="<?php if((isset($_COOKIE['switch'])) && ($_COOKIE['switch'] === 'dark')){
+          echo '/css/darkthemes/darkiniciostyle.css';
+      }else{
+          echo '/css/iniciostyle.css';
+        }?>">
+    <link rel="stylesheet" href="<?php if((isset($_COOKIE['switch'])) && ($_COOKIE['switch'] === 'dark')){
+          echo '/css/darkthemes/darkperfilstyle.css';
+      }else{
+          echo '/css/perfilstyle.css';
+        }?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Perfil de @foreach ($user as $dato)

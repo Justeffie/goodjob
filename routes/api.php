@@ -13,10 +13,22 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+<<<<<<< HEAD
 Route::get('/login', 'apiLoginController@validarOK');
 
 Route::get('/cantidadUsuario','UsuarioController@contarUser');
+=======
+Route::get('/login', 'apiLoginController@validarOK');*/
+
+Route::get('/verificarusuario/{email}', 'ApiController@verificarMail');
+
+
+
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+  });
+>>>>>>> d358003f642df89695637e4b8fbc11dde13a9125

@@ -2,15 +2,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="@if (isset($_COOKIE['switch']))
-      @if ($_COOKIE['switch'] === 'dark')
-          /css/darkthemes/darkiniciostyle.css
-      @else
-          /css/iniciostyle.css
-        @endif
-    @else
-      /css/iniciostyle.css
-    @endif">
+    <link rel="stylesheet" href="<?php if((isset($_COOKIE['switch'])) && ($_COOKIE['switch'] === 'dark')){
+          echo '/css/darkthemes/darkiniciostyle.css';
+      }else{
+          echo '/css/iniciostyle.css';
+        }?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Inicio</title>
@@ -31,10 +27,9 @@
           @endforeach" alt="">
           </div>
         </label>
-        <form class="search" action="/buscador" method="get">
-          {{csrf_field()}}
+        <form class="search" action="/buscador?explorar={{ Input::get('explorar') ?? ''}}" method="get">
           <input type="search" name="explorar" placeholder="Buscar">
-          <button id="exp" type="submit" name="explora">
+          <button id="exp" type="submit">
             <img class="lupa" src="/css/imagenes/lupa2.png" alt="">
           </button>
         </form>
@@ -46,9 +41,9 @@
               {{$dato->name}}
             @endforeach</p></li>
             <li class="barra">
-              <a href="/@foreach ($user as $dato)
-                {{$dato->usuario}}
-              @endforeach">
+              <a href="/<?php foreach ($user as $dato) {
+                echo trim($dato->usuario);
+              }?>">
             <img src="/css/imagenes/user.png" alt="">Perfil</a></li>
             <li class="barra"><a href="configuracion"><img src="/css/imagenes/configuracion.png" alt="">Configuración</a></li>
             <li class="barra">
@@ -65,10 +60,10 @@
           <div class="nav-principal">
           <ul>
             <li><a class="navegador" href="/home"><img class="nav" src="/css/imagenes/inicio.png" alt="Inicio"></a></li>
-            <li><a class="navegador" href="inicio.php"><img class="nav" src="/css/imagenes/notificacion.png" alt="Notificaciones"></a></li>
+            <li><a class="navegador" href="/"><img class="nav" src="/css/imagenes/notificacion.png" alt="Notificaciones"></a></li>
             <li><a class="navegador" href="/postear"><img class="nav" src="/css/imagenes/escribir.png" alt="Compartir"></a></li>
-            <li><a class="navegador" href="inicio.php"><img class="nav" src="/css/imagenes/mensajes.png" alt="Mensajes"></a></li>
-            <li><a class="navegador" href="inicio.php"><img class="nav" src="/css/imagenes/trabajo2.png" alt="Empleos"></a></li>
+            <li><a class="navegador" href="/"><img class="nav" src="/css/imagenes/mensajes.png" alt="Mensajes"></a></li>
+            <li><a class="navegador" href="/"><img class="nav" src="/css/imagenes/trabajo2.png" alt="Empleos"></a></li>
           </ul>
           </div>
         </nav>
@@ -87,9 +82,9 @@
               <p class="nombre-usuario">@foreach ($user as $dato)
                 {{$dato->name}}
               @endforeach</p>
-            <li class="barra"><a href="/@foreach ($user as $dato)
-              {{$dato->usuario}}
-            @endforeach"><img src="css/imagenes/user.png" alt="">Perfil</a></li>
+            <li class="barra"><a href="/<?php foreach ($user as $dato) {
+              echo trim($dato->usuario);
+            }?>"><img src="css/imagenes/user.png" alt="">Perfil</a></li>
             <li class="barra"><a href="#"><img src="css/imagenes/configuracion.png" alt="">Configuración</a></li>
             <li class="barra">
               <form class="" action="{{ route('logout') }}" method="post">

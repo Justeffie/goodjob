@@ -3,7 +3,7 @@
   <body>
     <nav class="menu-principal">
       <div class="menu-contenedor">
-      <a href="index" class="nombre">Good Job</a>
+      <a href="/" class="nombre">Good Job</a>
       <input id="act" type="checkbox" name="act" value="">
       <label for="act">
       <img class=" hamburguesa" src="css/imagenes/menu.png" alt="">

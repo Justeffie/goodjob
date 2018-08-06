@@ -3,24 +3,16 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="@if (isset($_COOKIE['switch']))
-      @if ($_COOKIE['switch'] === 'dark')
-          /css/darkthemes/darkiniciostyle.css
-      @else
-          /css/iniciostyle.css
-        @endif
-    @else
-      /css/iniciostyle.css
-    @endif">
-    <link rel="stylesheet" href="@if (isset($_COOKIE['switch']))
-      @if ($_COOKIE['switch'] === 'dark')
-          /css/darkthemes/darkbuscadorstyle.css
-      @else
-          /css/buscadorstyle.css
-        @endif
-    @else
-      /css/buscadorstyle.css
-    @endif">
+    <link rel="stylesheet" href=<?php if((isset($_COOKIE['switch'])) && ($_COOKIE['switch'] === 'dark')){
+          echo '/css/darkthemes/darkiniciostyle.css';
+      }else{
+          echo '/css/iniciostyle.css';
+        }?>>
+    <link rel="stylesheet" href="<?php if((isset($_COOKIE['switch'])) && ($_COOKIE['switch'] === 'dark')){
+          echo '/css/darkthemes/darkbuscadorstyle.css';
+      }else{
+          echo '/css/buscadorstyle.css';
+        }?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscador</title>
   </head>
@@ -55,13 +47,13 @@
     </article>
     </a>
       </section>
-    <div class="paginado">
-      {{$usuarios->links()}}
-    </div>
+
     @endforeach
 @endif
-
-
-
+@if (count($usuarios) >= 1)
+  <div class="paginado">
+    {{$usuarios->appends(Input::except('page'))->links()}}
+  </div>
+@endif
 @endsection
 </html>

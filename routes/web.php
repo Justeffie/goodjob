@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/agregar', 'ValidarController@formulario');
 Route::post('/agregar', 'ValidarController@validarFormulario');
-Route::get('/index', 'IndexController@index')->middleware('guest');
+Route::get('/', 'IndexController@index')->middleware('guest');
 Route::get('/faq.php', 'IndexController@faq');
 //Route::get('/login.php', 'Auth\LoginController@showLoginForm');
 //Route::post('/login.php', 'Auth\LoginController@postlogin');
@@ -35,7 +33,6 @@ Route::get('/faq.php', 'IndexController@faq');
 Auth::routes();
 Route::post('/seguir/{usuario}', 'UsuarioController@seguir')->middleware('auth');
 Route::post('/dejarseguir/{usuario}', 'UsuarioController@dejarDeSeguir')->middleware('auth');
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/home', 'HomeController@postUsuario');
 Route::get('logout', 'Auth\LoginController@logout');
