@@ -9,9 +9,7 @@
     <title>Ingresar a Good Job</title>
   </head>
   <body>
-    <script src="../../public/js/validacionLogin.js">
 
-    </script>
 
 
       @section('content')
@@ -31,6 +29,7 @@
       <input type="text" placeholder="" name="email" value="{{old('email')}}" id="email">
 
       <br>
+      <span id="errormail"></span>
       @if ($errors->has('email'))
           <span class="invalid-feedback" role="alert">
               <strong>{{ $errors->first('email') }}</strong>
@@ -58,5 +57,8 @@
 
 </div>
     @endsection
+    <script src="/js/validacionLogin.js">
+
+    </script>
   </body>
 </html>
