@@ -47,3 +47,5 @@ Route::post('/postear', 'PosteosController@postUsuario')->middleware('auth');
 Route::get('/{usuario}', 'PerfilController@index')->name('perfil')->middleware('auth');
 Route::get('/{usuario}/{imagen}', 'PosteosController@vistaPostUsuario')->middleware('auth');
 Route::post('/{usuario}/{imagen}', 'PosteosController@borrar')->middleware('auth');
+
+Route::get('/cantidadUsuario','UsuarioController@contarUser');

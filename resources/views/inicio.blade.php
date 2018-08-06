@@ -47,6 +47,7 @@
 
                 }
               }
+
         @endphp
         </div>
 
@@ -70,4 +71,12 @@
       </div>
     </div>
     </aside>
+    <br>
+    <div class="cont-usur">
+      <p>ya somos <span id="cantUser"></span> usuarios</p>
+
+    </div>
+    <script src="/js/contUsuarios.js">
+
+    </script>
     @endsection

@@ -18,3 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/login', 'apiLoginController@validarOK');
+
+Route::get('/cantidadUsuario','UsuarioController@contarUser');

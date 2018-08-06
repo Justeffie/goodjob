@@ -82,4 +82,11 @@ class UsuarioController extends Controller
     }
 
 
+      public function contarUser(){
+
+        $cant = Usuario::all()->count();
+        return response()->json($cant);
+
+      }
+
 }
