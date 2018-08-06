@@ -6,10 +6,11 @@
          if ($post->all() === []) {
               echo '<div class="buscar-amigos">
                 <p>Todavía no tenés amigos. Comenzá a explorar...</p>
-                <form class="search" action="/buscador" method="get">';
-                  echo csrf_field();
-                echo  '<input type="search" name="explorar" placeholder="Buscar">
-                <button class="exp" type="submit" name="explora">
+                <form class="search" action="/buscador?explorar=';
+                echo Input::get('explorar') ?? '';
+                 echo '" method="get">
+                <input type="search" name="explorar" placeholder="Buscar">
+                <button class="exp" type="submit">
                   <img class="lupa" src="/css/imagenes/lupa2.png" alt="">
                 </button>
                 </form>

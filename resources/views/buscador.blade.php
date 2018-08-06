@@ -47,13 +47,13 @@
     </article>
     </a>
       </section>
-    <div class="paginado">
-      {{$usuarios->links()}}
-    </div>
+
     @endforeach
 @endif
-
-
-
+@if (count($usuarios) >= 1)
+  <div class="paginado">
+    {{$usuarios->appends(Input::except('page'))->links()}}
+  </div>
+@endif
 @endsection
 </html>
