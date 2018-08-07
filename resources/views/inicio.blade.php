@@ -68,8 +68,12 @@
             @endforeach
           </select>
           <input class="postear" type="submit" name="" value="Publicar">
-          <p>ya somos <span id="cantUser"></span> usuarios</p>
         </form>
+      </div>
+      <div class="ya-somos">
+        <p id="yasomos">Ya somos</p>
+          <p id="cant-u"><span id="cantUser"></span></p>
+          <p id="ys-usuarios">usuarios</p>
       </div>
     </div>
     </aside>
