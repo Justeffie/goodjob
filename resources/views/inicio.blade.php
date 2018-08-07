@@ -68,15 +68,16 @@
             @endforeach
           </select>
           <input class="postear" type="submit" name="" value="Publicar">
+          <p>ya somos <span id="cantUser"></span> usuarios</p>
         </form>
       </div>
     </div>
     </aside>
     <br>
-    <div class="cont-usur">
+
       <p>ya somos <span id="cantUser"></span> usuarios</p>
 
-    </div>
+
   <script src="/js/contUsuarios.js">
   </script>
     @endsection
