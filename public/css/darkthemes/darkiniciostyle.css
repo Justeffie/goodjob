@@ -14,6 +14,18 @@ body {
   background-color: #17171d;
 }
 
+.publicar p{
+  color: white;
+  margin 0 auto;
+  font-size: 0.7rem;
+}
+
+.publicar span{
+  color: white ;
+  margin 0 auto;
+  font-size: 0.7rem;
+}
+
  /* HEADER */
  .head-contenedor {
   overflow: hidden;
