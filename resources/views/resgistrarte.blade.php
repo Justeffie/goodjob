@@ -52,6 +52,7 @@
 <div class="formb">
 <label>Correo Electronico</label>
 <span id="emailOK"></span>
+<span id="errormail"></span>
   <input type="text" name="email" id="email" value="{{old('email')}}">
 
 
