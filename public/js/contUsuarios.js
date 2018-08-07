@@ -5,6 +5,8 @@ xmlhttp.onreadystatechange = function(){
       console.log(xmlhttp.responseText);
       var cantidadUsuarios = xmlhttp.responseText;
       document.getElementById("cantUser").innerHTML = cantidadUsuarios;
+        setTimeout('cantidadUsuario.reload()',30000);
+
 
   }
 };
