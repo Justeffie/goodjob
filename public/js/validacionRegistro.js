@@ -94,7 +94,7 @@
         else{
           console.log('submit prevent def')
           let email = document.getElementById('email');
-          fetch(`http://localhost:8000/api/verificarusuario/${email.value}`)
+          fetch(`http://127.0.0.1:8000/api/verificarusuario/${email.value}`)
           .then(function(res){
               return res.json()
               }).then( function(data){

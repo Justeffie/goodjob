@@ -25,60 +25,58 @@
 
       </div>
   <input type="text" name="name" id="name" value="{{old('name')}}"  >
-  {{-- @if ($errors->has('name'))
+  @if ($errors->has('name'))
       <span class="invalid-feedback" role="alert">
           <strong>{{ $errors->first('name') }}</strong>
       </span>
-  @endif --}}
+  @endif
     <br>
       <label>Apellido</label>
         <input type="text" name="apellido" id="apellido" value="{{old('apellido')}}" >
 
-        {{-- @if ($errors->has('apellido'))
+       @if ($errors->has('apellido'))
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $errors->first('apellido') }}</strong>
             </span>
-        @endif --}}
+        @endif
       <br>
         <label>Usuario</label>
   <input type="text" name="usuario" id="usuario" value="{{old('usuario')}}" >
 
-  {{-- @if ($errors->has('usuario'))
+  @if ($errors->has('usuario'))
       <span class="invalid-feedback" role="alert">
           <strong>{{ $errors->first('usuario') }}</strong>
       </span>
-  @endif --}}
+  @endif
 </div>
 <div class="formb">
 <label>Correo Electronico</label>
-<span id="emailOK"></span>
-<span id="errormail"></span>
   <input type="text" name="email" id="email" value="{{old('email')}}">
-
-
-  {{-- @if ($errors->has('email'))
+  <span id="emailOK" class="invalid-feedback" role="alert"></span>
+  <span id="errormail" class="invalid-feedback" role="alert"></span>
+   @if ($errors->has('email'))
       <span class="invalid-feedback" role="alert">
           <strong>{{ $errors->first('email') }}</strong>
       </span>
-  @endif --}}
+  @endif
 <br>
 <label>Fecha de nacimiento</label>
 <input type="date" name="nacimiento" value="" id="nacimiento" min="1950-01-01" max="2019-01-01">
 
-{{-- @if ($errors->has('nacimiento'))
+ @if ($errors->has('nacimiento'))
     <span class="invalid-feedback" role="alert">
         <strong>{{ $errors->first('nacimiento') }}</strong>
     </span>
-@endif --}}
+@endif
 <br>
   <label>Contraseña</label>
     <input type="password" name="password" id="password" value="">
 
-    {{-- @if ($errors->has('password'))
+    @if ($errors->has('password'))
         <span class="invalid-feedback" role="alert">
             <strong>{{ $errors->first('password') }}</strong>
         </span>
-    @endif --}}
+    @endif
   <br>
 <label>Foto de perfil </label> <br>
 <input id="regAvatar" type="file" name="avatar" value="">

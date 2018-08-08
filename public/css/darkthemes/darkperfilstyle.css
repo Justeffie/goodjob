@@ -102,13 +102,27 @@ display: block;
 }
 
 .paginado {
+  margin-top: 50px;
   overflow: hidden;
-  width: 44px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 60px;
+}
+.page-item  {
+  padding: 5px 10px;
+  border: 1px solid grey;
+  background-color: #373777;
+  color:black;
+}
+.page-item:hover {
+  background-color: #2e2e50;
+}
+.page-item.active {
+  background-color: #2e2e50;
 }
 .pagination, .page-item, .page-item.active, .page-item.disable {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 }
 section.trabajos {
 
