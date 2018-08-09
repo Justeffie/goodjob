@@ -78,10 +78,6 @@
     </div>
     </aside>
     <br>
-
-      <p>ya somos <span id="cantUser"></span> usuarios</p>
-
-
   <script src="/js/contUsuarios.js">
   </script>
     @endsection
