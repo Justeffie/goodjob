@@ -1,12 +1,24 @@
 window.onload = function() {
 
+
+
   var form = document.getElementById('formulario');
 
   form.addEventListener('submit', function(ev){
 
     ev.preventDefault();
+
+
+
     console.log('submit prevent def')
     let email = document.getElementById('email');
+    let contrasenia= document.getElementById('password');
+
+    if (contrasenia.value==''||email.value==''){
+        alert('Hay campos vacíos');
+    }
+
+
 
     fetch(`http://127.0.0.1:8000/api/verificarusuario/${email.value}`)
       .then(function(res){
